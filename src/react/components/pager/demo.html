@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Pager Component Experiment</title>
+    <link href="pager.css" type="text/css" rel="stylesheet" />
+    <!-- React.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.12.2/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.12.2/JSXTransformer.js"></script>
+    <script src="../gearz.mixin.js"></script>
+    <script src="pager.jsx" type="text/jsx"></script>
+</head>
+<body>
+<h1>pager.jsx</h1>
+<h3>using external props (generic event)</h3>
+<div id="output1"></div>
+<h3>using external props (specific event)</h3>
+<div id="output2"></div>
+<h3>using internal state (no events at all)</h3>
+<div id="output3"></div>
+<script type="text/jsx">
+    var glb = {
+        pager1: {
+            page: 1,
+            pageSize: 10,
+            count: 45
+        },
+        pager2: {
+            page: 1,
+            pageSize: 10,
+            count: 88
+        }
+    };
+    function onPagerChange(data, render) {
+        return function(e) {
+            e.preventDefault();
+            data[e.key] = e.value;
+            render();
+        }.bind(this);
+    }
+    function render1() {
+        React.render(<Pager
+                page={glb.pager1.page}
+                count={glb.pager1.count}
+                pageSize={glb.pager1.pageSize}
+                onAnyChange={onPagerChange(glb.pager1, render1)} />,
+            document.getElementById("output1")
+        );
+    }
+    function render2() {
+        React.render(<Pager
+                page={glb.pager2.page}
+                count={glb.pager2.count}
+                pageSize={glb.pager2.pageSize}
+                onPageChange={onPagerChange(glb.pager2, render2)} />,
+            document.getElementById("output2")
+        );
+    }
+    function render3() {
+        React.render(<Pager
+                page={1}
+                count={101}
+                pageSize={10}
+                render={render3} />,
+            document.getElementById("output3")
+        );
+    }
+    render1();
+    render2();
+    render3();
+</script>
+</body>
+</html>
