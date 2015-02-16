@@ -25,26 +25,32 @@ var PagerSample = React.createClass({
                     page={this.state.pager1.page}
                     count={this.state.pager1.count}
                     pageSize={this.state.pager1.pageSize}
-                    onAnyChange={function (e) {
+                    onAnyChange={
+                        function(e) {
                             e.preventDefault();
                             var newState = React.addons.update(
                                 this.state,
                                 { pager1: { page: { $set: e.value } }});
                             this.setState(newState);
-                        }.bind(this)} />
+                        }.bind(this)
+                    }
+                />
 
                 <h4>using external props (specific event)</h4>
                 <Pager
                     page={this.state.pager2.page}
                     count={this.state.pager2.count}
                     pageSize={this.state.pager2.pageSize}
-                    onPageChange={function (e) {
+                    onPageChange={
+                        function (e) {
                             e.preventDefault();
                             var newState = React.addons.update(
                                 this.state,
                                 { pager2: { page: { $set: e.value } }});
                             this.setState(newState);
-                        }.bind(this)} />
+                        }.bind(this)
+                    }
+                />
 
                 <h4>using internal state (no events at all)</h4>
                 <Pager

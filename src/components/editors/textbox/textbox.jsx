@@ -1,4 +1,4 @@
-var TextBox = React.createClass({
+var Textbox = React.createClass({
         mixins: [gearz],
         render: function() {
                 var value = this.get("value");
