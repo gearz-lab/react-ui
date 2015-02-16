@@ -1,23 +1,39 @@
 var Textbox = React.createClass({
+        mixins: [gearz],
         propTypes: {
+            // The input id
+            id: React.PropTypes.string.isRequired,
             // The textbox value
             value: React.PropTypes.string,
             // Text to be prepended to the component
             prependText: React.PropTypes.string,
             // Text to be appended to the component
-            appendText: React.PropTypes.string
+            appendText: React.PropTypes.string,
+            // Placeholder
+            placeholder: React.PropTypes.string,
+            // Whether or not the component is disabled
+            disabled: React.PropTypes.bool,
+            // Whether or not the component is invalid
+            invalid: React.PropTypes.bool,
+            // Whether or not the component is required
+            required: React.PropTypes.bool
         },
-        mixins: [gearz],
         render: function() {
 
+                var id = this.get("id");
                 var value = this.get("value");
                 var prependText = this.get("prependText");
-                var appendText = this.get("appendText")
+                var appendText = this.get("appendText");
+                var placeholder = this.get("placeholder");
+                var disabled = this.get("disabled");
 
                 var input = <input
+                    id={id}
                     type="textbox"
-                    className="form-control"
-                    value={this.get("value")}
+                    className="form-control has-error"
+                    placeholder={placeholder}
+                    value={value}
+                    disabled={disabled}
                     onChange={
                         function(e) {
                             return this.set(e, "value", e.target.value);

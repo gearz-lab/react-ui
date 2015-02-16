@@ -1,9 +1,3 @@
-/*
-    props:
-        page (number): The current page. When changed, the 'onPageChange' event is triggered.
-        count (number): The record count.
-        pageSize (number): The number or records per page.
- */
 var Pager = React.createClass({
     mixins: [gearz],
     render: function() {
