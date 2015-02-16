@@ -1,7 +1,6 @@
 var PagerSample = React.createClass({
     getInitialState: function () {
         return {
-            name: "xpto",
             pager1: {
                 page: 1,
                 pageSize: 10,
