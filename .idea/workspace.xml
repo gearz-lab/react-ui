@@ -2,58 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0c090cb5-35c6-4048-8978-52290062fd47" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/gearz.mixin.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/navigation/pager/pager.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/navigation/pager/pager.jsx" />
-      <change type="DELETED" beforePath="C:\Projects\React\react-components\.editorconfig" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\React\react-components\.gitattributes" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\React\react-components\.idea\.name" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\React\react-components\.idea\encodings.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\React\react-components\.idea\misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\React\react-components\.idea\modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\React\react-components\.idea\react-components.iml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\React\react-components\.idea\vcs.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\React\react-components\.jscsrc" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\React\react-components\.jshintrc" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\React\react-components\.travis.yml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\React\react-components\CHANGELOG.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\React\react-components\CONTRIBUTING.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\React\react-components\LICENSE.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\React\react-components\README.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\React\react-components\gulpfile.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\React\react-components\package.json" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\React\react-components\src\.editorconfig" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\React\react-components\src\.gitattributes" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\React\react-components\src\.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\React\react-components\src\404.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\React\react-components\src\apple-touch-icon.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\React\react-components\src\browserconfig.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\React\react-components\src\crossdomain.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\React\react-components\src\css\main.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\React\react-components\src\doc\TOC.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\React\react-components\src\doc\css.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\React\react-components\src\doc\extend.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\React\react-components\src\doc\faq.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\React\react-components\src\doc\html.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\React\react-components\src\doc\js.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\React\react-components\src\doc\misc.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\React\react-components\src\doc\usage.md" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\React\react-components\src\favicon.ico" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\React\react-components\src\humans.txt" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\React\react-components\src\img\.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\React\react-components\src\index.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\React\react-components\src\js\main.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\React\react-components\src\js\plugins.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\React\react-components\src\js\vendor\modernizr-2.8.3.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\React\react-components\src\react\components\gearz.mixin.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\React\react-components\src\react\components\pager\demo.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\React\react-components\src\react\components\pager\pager.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\React\react-components\src\react\components\pager\pager.jsx" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\React\react-components\src\react\components\react.components.common.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\React\react-components\src\robots.txt" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\React\react-components\src\tile-wide.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Projects\React\react-components\src\tile.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="DELETED" beforePath="C:\Projects\React\react-components\samples\navigation\pager\basics.html" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/gearz.mixin.js" afterPath="$PROJECT_DIR$/src/components/gearz.mixin.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/navigation/pager/pager.jsx" afterPath="$PROJECT_DIR$/src/components/navigation/pager/pager.jsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="react-components.iws" />
@@ -78,11 +29,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="basics.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/samples/navigation/pager/basics.html">
+      <file leaf-file-name="textbox.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/editors/textbox/textbox.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="1513">
-              <caret line="4" column="40" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
+              <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="textbox.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/samples/editors/textbox/textbox.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1513">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pagerSample.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/samples/navigation/pager/pagerSample.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="1632">
+              <caret line="35" column="70" selection-start-line="35" selection-start-column="66" selection-end-line="35" selection-end-column="70" />
               <folding />
             </state>
           </provider>
@@ -91,18 +62,28 @@
       <file leaf-file-name="pager.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/navigation/pager/pager.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
-              <caret line="11" column="50" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680">
+              <caret line="4" column="58" selection-start-line="4" selection-start-column="58" selection-end-line="4" selection-end-column="58" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pager.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pager.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/navigation/pager/pager.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="851">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gearz.mixin.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/gearz.mixin.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.627451" vertical-offset="0" max-vertical-offset="952">
+              <caret line="32" column="19" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -121,12 +102,17 @@
         <option value="$PROJECT_DIR$/src/react/components/pager/pager.css" />
         <option value="$PROJECT_DIR$/src/react/components/pager/pager.jsx" />
         <option value="$PROJECT_DIR$/src/react/components/pager/demo.html" />
-        <option value="$PROJECT_DIR$/src/components/gearz.mixin.js" />
         <option value="$PROJECT_DIR$/src/components/navigation/pager.jsx" />
         <option value="$PROJECT_DIR$/samples/navigation/pager/basics" />
-        <option value="$PROJECT_DIR$/samples/navigation/pager/basics.html" />
-        <option value="$PROJECT_DIR$/src/components/navigation/pager/pager.jsx" />
         <option value="$PROJECT_DIR$/src/components/navigation/pager/pager.css" />
+        <option value="$PROJECT_DIR$/src/components/editors/textbox/textbox.jsx" />
+        <option value="$PROJECT_DIR$/samples/navigation/pager/basics.html" />
+        <option value="$PROJECT_DIR$/samples/editors/textbox/basics.html" />
+        <option value="$PROJECT_DIR$/samples/navigation/pager/basics.jsx" />
+        <option value="$PROJECT_DIR$/samples/navigation/pager/pager.jsx" />
+        <option value="$PROJECT_DIR$/src/components/navigation/pager/pager.jsx" />
+        <option value="$PROJECT_DIR$/samples/navigation/pager/pagerSample.jsx" />
+        <option value="$PROJECT_DIR$/src/components/gearz.mixin.js" />
       </list>
     </option>
   </component>
@@ -134,9 +120,10 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="840" />
-    <option name="width" value="840" />
-    <option name="height" value="1010" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1696" />
+    <option name="height" value="1026" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -245,6 +232,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="react-components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="react-components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="samples" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="editors" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="textbox" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -257,6 +266,7 @@
     <property name="FullScreen" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../UserHub" />
     <property name="JavaScriptLanguageLevel" value="JSX" />
+    <property name="LayoutCode.rearrangeEntriesHTML" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -319,7 +329,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="840" y="0" width="840" height="1010" extended-state="0" />
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -327,7 +337,9 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2468828" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1761158" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -335,11 +347,9 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -383,14 +393,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/gearz.mixin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1003">
-          <caret line="53" column="1" selection-start-line="53" selection-start-column="1" selection-end-line="53" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.72" vertical-offset="0" max-vertical-offset="187">
@@ -399,26 +401,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/samples/navigation/pager/basics.html">
+    <entry file="file://$PROJECT_DIR$/src/components/navigation/pager/pager.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="1513">
-          <caret line="4" column="40" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="851">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/editors/textbox/textbox.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
+          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/samples/editors/textbox/textbox.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1513">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/navigation/pager/pager.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
-          <caret line="11" column="50" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680">
+          <caret line="4" column="58" selection-start-line="4" selection-start-column="58" selection-end-line="4" selection-end-column="58" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/navigation/pager/pager.css">
+    <entry file="file://$PROJECT_DIR$/samples/navigation/pager/pagerSample.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="851">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="1632">
+          <caret line="35" column="70" selection-start-line="35" selection-start-column="66" selection-end-line="35" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/gearz.mixin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.627451" vertical-offset="0" max-vertical-offset="952">
+          <caret line="32" column="19" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
           <folding />
         </state>
       </provider>

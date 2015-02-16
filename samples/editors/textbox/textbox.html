@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Pager component</title>
+
+    <!-- Normalize -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.2/normalize.min.css" type="text/css"
+          rel="stylesheet"/>
+
+    <!-- React.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.12.2/react.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.12.2/JSXTransformer.js"></script>
+
+    <!-- Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap.min.css" type="text/css"
+          rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap-theme.css" type="text/css"
+          rel="stylesheet"/>
+
+    <!-- React-components -->
+    <link href="../../../src/components/navigation/pager/pager.css" type="text/css" rel="stylesheet"/>
+    <script src="../../../src/components/gearz.mixin.js"></script>
+    <script src="../../../src/components/editors/textbox/textbox.jsx" type="text/jsx"></script>
+
+</head>
+<body>
+<div class="container">
+    <h1 class="page-header">textbox.jsx</h1>
+    <h4>using external props (generic event)</h4>
+
+    <div id="output1"></div>
+    <h4>using external props (specific event)</h4>
+
+    <div id="output2"></div>
+    <h4>using internal state (no events at all)</h4>
+
+    <div id="output3"></div>
+    <script type="text/jsx">
+        var glb = {
+            textbox1: {
+                value: "Miguel"
+            },
+            textbox2: {
+                value: "Angelo"
+            }
+        };
+        function onChange(data, render) {
+            return function (e) {
+                e.preventDefault();
+                data[e.key] = e.value;
+                render();
+            };
+        }
+        function render1() {
+            React.render(
+                    <TextBox
+                            value={glb.textbox1.value}
+                            onAnyChange={onChange(glb.textbox1, render1)} />,
+                    document.getElementById("output1")
+            );
+        }
+        function render2() {
+            React.render(
+                    <TextBox
+                            value={glb.textbox2.value}
+                            onChange={onChange(glb.textbox2, render2)} />,
+                    document.getElementById("output2")
+            );
+        }
+        function render3() {
+            React.render(
+                    <TextBox
+                            value="Bicudo" />,
+                    document.getElementById("output3")
+            );
+        }
+        render1();
+        render2();
+        render3();
+    </script>
+</div>
+</body>
+</html>
