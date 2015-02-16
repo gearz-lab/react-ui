@@ -15,7 +15,8 @@ var gearz = {
     // in the component internal 'state'
     set: function(e, propName, newValue) {
         var prevDef = false;
-        var e1 = {
+        var eventData = {
+            target: this,
             preventDefault: function() {
                 prevDef = true;
             },
@@ -25,17 +26,17 @@ var gearz = {
             setValue: function(v){newValue=v;},
             domEvent: e
         };
-        Object.freeze(e1);
+        Object.freeze(eventData);
 
         var onAnyChange = this.props.onAnyChange;
-        onAnyChange && onAnyChange.call(this, e1);
+        onAnyChange && onAnyChange(eventData);
         if (prevDef)
             return;
 
         var name = propName == "value" ? "" : propName[0].toUpperCase()+propName.substr(1);
         var fnName = "on"+name+"Change";
-        var fn1 = this.props.hasOwnProperty(fnName) && this.props[fnName];
-        fn1 && fn1.call(this, e1);
+        var onPropertyChange = this.props.hasOwnProperty(fnName) && this.props[fnName];
+        onPropertyChange && onPropertyChange(eventData);
         if (prevDef)
             return;
 
