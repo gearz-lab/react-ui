@@ -1,2 +1,5 @@
-archive
+.idea
 node_modules
+lib/
+*.log
+
