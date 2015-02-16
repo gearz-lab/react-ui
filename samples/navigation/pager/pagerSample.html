@@ -8,7 +8,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.2/normalize.min.css" type="text/css" rel="stylesheet" />
 
     <!-- React.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.12.2/react.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.12.2/react-with-addons.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.12.2/JSXTransformer.js"></script>
 
     <!-- Bootstrap -->
@@ -21,76 +21,21 @@
     <link href="../../../src/components/navigation/pager/pager.css" type="text/css" rel="stylesheet"/>
     <script src="../../../src/components/gearz.mixin.js"></script>
     <script src="../../../src/components/navigation/pager/pager.jsx" type="text/jsx"></script>
+    <script src="pagerSample.jsx" type="text/jsx"></script>
 
 </head>
 <body>
 
 <div class="container">
 
-    <h1 class="page-header">pager.jsx</h1>
-    <h4>using external props (generic event)</h4>
-
-    <div id="output1"></div>
-    <h4>using external props (specific event)</h4>
-
-    <div id="output2"></div>
-    <h4>using internal state (no events at all)</h4>
-
-    <div id="output3"></div>
+    <div id="output"></div>
     <script type="text/jsx">
-        var glb = {
-            pager1: {
-                page: 1,
-                pageSize: 10,
-                count: 45
-            },
-            pager2: {
-                page: 1,
-                pageSize: 10,
-                count: 88
-            }
-        };
-        function onPagerChange(data, render) {
-            return function (e) {
-                e.preventDefault();
-                data[e.key] = e.value;
-                render();
-            }.bind(this);
-        }
-        function render1() {
-            React.render(
-                    <Pager
-                            page={glb.pager1.page}
-                            count={glb.pager1.count}
-                            pageSize={glb.pager1.pageSize}
-                            onAnyChange={onPagerChange(glb.pager1, render1)} />,
-                    document.getElementById("output1")
-            );
-        }
-        function render2() {
-            React.render(
-                    <Pager
-                            page={glb.pager2.page}
-                            count={glb.pager2.count}
-                            pageSize={glb.pager2.pageSize}
-                            onPageChange={onPagerChange(glb.pager2, render2)} />,
-                    document.getElementById("output2")
-            );
-        }
-        function render3() {
-            React.render(
-                    <Pager
-                            page={1}
-                            count={101}
-                            pageSize={10}
-                            render={render3} />,
-                    document.getElementById("output3")
-            );
-        }
-        render1();
-        render2();
-        render3();
+        React.render(
+                <PagerSample />,
+                document.getElementById("output")
+        );
     </script>
+
 </div>
 </body>
 </html>
