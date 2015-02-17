@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Link Component Experiment</title>
+
+    <!-- Normalize -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.2/normalize.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- React.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.12.2/react-with-addons.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.12.2/JSXTransformer.js"></script>
+
+    <!-- Routing -->
+    <script src="../../../src/routing/gearz.routing.js" type="text/javascript"></script>
+    <script src="../../../src/routing/gearz.routing.mixins.js" type="text/javascript"></script>
+
+    <!-- Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap.min.css" type="text/css"
+          rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap-theme.css" type="text/css"
+          rel="stylesheet"/>
+
+    <!-- React-components -->
+    <link href="../../../src/components/navigation/pager/pager.css" type="text/css" rel="stylesheet"/>
+    <script src="../../../src/components/gearz.mixin.js"></script>
+    <script src="../../../src/components/navigation/link/link.jsx" type="text/jsx"></script>
+    <script src="pages.jsx" type="text/jsx"></script>
+</head>
+<body>
+<div id="output"></div>
+<script type="text/jsx">
+    window.stores = {};
+    window.onpopstate = function(event) {
+        if (event.state) {
+            window.stores.viewData = event.state.viewData;
+            var Component = window[event.state.pageComponent];
+            if (Component){
+                React.render(
+                        <Component />,
+                        document.getElementById("output")
+                );
+                return;
+            }
+        }
+        render();
+    };
+    function render() {
+        React.render(
+                <IndexPage />,
+                document.getElementById("output")
+        );
+    }
+    render();
+</script>
+</body>
+</html>
