@@ -1,9 +1,6 @@
 var FormGroupSample = React.createClass({
     getInitialState: function () {
         return {
-            formGroupSample1: {
-                value: "Lorem ipsum dolor sit amet"
-            }
         };
     },
     render: function () {
