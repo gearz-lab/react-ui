@@ -1,12 +1,14 @@
 var TreeView = React.createClass({
     mixins: [gearz],
     propTypes: {
+
         data: React.PropTypes.object.isRequired
     },
     getInitialState: function () {
         return {}
     },
 
+    // returns a list of flat data. The type of each node is "flatTreeNode"
     traverseData: function (hierachicalData) {
         var flatData = [];
 
@@ -30,6 +32,12 @@ var TreeView = React.createClass({
     },
 
     updateState: function (key, collapsed) {
+        /* builds an object to update based on the following example
+             var newData = React.addons.update(myData, {
+                 x: {y: {z: {$set: 7}}},
+                 a: {b: {$push: [9]}}
+             });
+         */
         var keyParts = key.split(".");
         var updateObject = {};
         var targetObject = updateObject;
@@ -40,6 +48,9 @@ var TreeView = React.createClass({
             updateObject = updateObject[keyParts[i]].nodes;
         }
         targetObject.collapsed = {$set: collapsed};
+        /* originalObjectObject now has the following format:
+            { rootNode: { nodes: { anotherNode: { $set: collapsed} } }  }
+         */
         var newData = React.addons.update(this.get("data"), originalObjectObject);
         this.set("data", newData);
     },
@@ -51,22 +62,21 @@ var TreeView = React.createClass({
 
         var traversedData = this.traverseData(data);
 
-        // comnputes the paddinng-left of a node
+        // computes the paddinng-left of a node
         var computeIdentMargin = function (node) {
             var offset = 10;
             return (offset + node.level * 15) + "px";
         }
 
-
-        var getNode = function (key) {
-            for (var i = 0; i < traversedData.length; i++)
-                if (traversedData[i].key == key)
-                    return traversedData[i];
-            return null;
-        }
-
         // determins whether or no the node is hidden
         var isNodeHidden = function (node) {
+            // returns a hierarchical node that matches the given key
+            var getNode = function (key) {
+                for (var i = 0; i < traversedData.length; i++)
+                    if (traversedData[i].key == key)
+                        return traversedData[i];
+                return null;
+            }
             var nodeParent = getNode(node.parentKey);
             if (nodeParent == null)
                 return false;
