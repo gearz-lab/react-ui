@@ -3,20 +3,33 @@ var Textbox = React.createClass({
         propTypes: {
             // The input id
             id: React.PropTypes.string.isRequired,
+
             // The textbox value
             value: React.PropTypes.string,
+
+            // Event raised when the textbox value is changed by the user
+            onChange: React.PropTypes.func,
+
             // Text to be prepended to the component
             prependText: React.PropTypes.string,
+
             // Text to be appended to the component
             appendText: React.PropTypes.string,
+
             // Placeholder
             placeholder: React.PropTypes.string,
+
             // Whether or not the component is disabled
             disabled: React.PropTypes.bool,
+
             // Whether or not the component is invalid
             invalid: React.PropTypes.bool,
+
             // Whether or not the component is required
-            required: React.PropTypes.bool
+            required: React.PropTypes.bool,
+
+            // Event raised when anything is changed in the component
+            onAnyChange: React.PropTypes.func
         },
         render: function() {
 
