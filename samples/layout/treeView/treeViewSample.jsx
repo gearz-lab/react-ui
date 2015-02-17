@@ -16,7 +16,7 @@ var TreeViewSample = React.createClass({
                                             display: "Panel (Main)",
                                             nodes: {
                                                 name: {
-                                                    display: "TexboxControl (Name)"
+                                                    display: "TexboxControl (Name)",
                                                 },
                                                 dateOfBirth: {
                                                     display: "DatePickerControl (Date of Birth)"

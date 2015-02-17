@@ -3,7 +3,7 @@ var TabHeader = React.createClass({
     propTypes: {
         // Active tab name
         activeTab: React.PropTypes.string.isRequired,
-        // tab array
+        // tab array. Each element is of type { name (string), displayName (string) }
         tabs: React.PropTypes.array.isRequired
     },
 
@@ -12,9 +12,9 @@ var TabHeader = React.createClass({
         var activeTab = this.get("activeTab");
         var tabs = this.get("tabs");
 
-        return <ul class="nav nav-tabs">
+        return <ul className="nav nav-tabs">
         { tabs.map(function (item) {
-            return <li role="presentation" class="active">
+            return <li role="presentation" className={ item.name == activeTab ? "active" : "" }>
                 <a href="#" onClick={ that.setter("activeTab", item.name) }>{ item.displayName }</a>
             </li>;
         })}
