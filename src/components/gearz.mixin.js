@@ -1,10 +1,10 @@
 var gearz = {
-    getInitialState: function() {
+    getInitialState: function () {
         return {};
     },
     // 'get' is used to get properties that may be stored in 'state' or in 'props'
     // this happens when a value is defined throw a 'setter'
-    get: function(propName) {
+    get: function (propName) {
         return this.state.hasOwnProperty(propName)
             ? this.state[propName]
             : this.props[propName];
@@ -15,31 +15,68 @@ var gearz = {
     // event data when the change is caused by a DOM event.
     // This will raise events that can be listened by parent components,
     // so that they know when the child component changes.
-    set: function(propName, newValue, context) {
-        var prevDef = false;
-        var eventData = {
+    set: function (propName, newValue, context) {
+        var prevDef = false, isOriginalNewValue = true;
+
+        var name = propName == "value" ? "" : propName[0].toUpperCase() + propName.substr(1);
+        var specificEventName = "on" + name + "Change";
+
+        var defaultProps = ["target", "key", "previous", "context", "originalNewValue", "specificEventName", "genericEventName", "value", "isOriginalNewValue", "preventDefault", "merge", "trigger"];
+        var eventObject = {
             target: this,
-            preventDefault: function() {
+            key: propName,
+            previous: this.props[propName],
+            context: context,
+            originalNewValue: newValue,
+            specificEventName: specificEventName,
+            genericEventName: "onAnyChange",
+            get value() {
+                return newValue;
+            },
+            set value(value) {
+                newValue = value;
+                isOriginalNewValue = this.originalNewValue === newValue;
+            },
+            get isOriginalNewValue() {
+                return isOriginalNewValue;
+            },
+            preventDefault: function () {
                 prevDef = true;
             },
-            key: propName,
-            value: newValue,
-            previous: this.props[propName],
-            setValue: function(v){newValue=v;},
-            context: context
-        };
-        Object.freeze(eventData);
+            merge: function (other) {
+                /**
+                 * Merges this event object, with another object, in order to include additional data to this event object.
+                 * You cannot override the default properties.
+                 * @param other {object} Containing properties to merged in a new event object.
+                 * @returns {object} The merging result between this event object and another object.
+                 */
+                var result = Object.create(this);
 
-        var onAnyChange = this.props.onAnyChange;
-        onAnyChange && onAnyChange(eventData);
-        if (prevDef)
+                for (var key in other)
+                    if (other.hasOwnProperty(key) && defaultProps.indexOf(key) < 0)
+                        Object.defineProperty(result, key, {value: other[key]});
+
+                return Object.freeze(result);
+            },
+            trigger: function (eventHandler) {
+                /**
+                 * Triggers an event handler (a function), if preventDefault was not called yet,
+                 * and returning whether the handler called preventDefault itself.
+                 * @param eventHandler {function} Function representing an event handler that will receive this event object.
+                 * @returns {boolean} Indicates whether preventDefault was called.
+                 */
+                if (!prevDef && eventHandler)
+                    eventHandler(this);
+                return prevDef;
+            }
+        };
+
+        Object.freeze(eventObject);
+
+        if (eventObject.trigger(this.props[specificEventName]))
             return;
 
-        var name = propName == "value" ? "" : propName[0].toUpperCase()+propName.substr(1);
-        var fnName = "on"+name+"Change";
-        var onPropertyChange = this.props.hasOwnProperty(fnName) && this.props[fnName];
-        onPropertyChange && onPropertyChange(eventData);
-        if (prevDef)
+        if (eventObject.trigger(this.props.onAnyChange))
             return;
 
         var newState = {};
@@ -51,9 +88,9 @@ var gearz = {
     // raising other events to notify parent components,
     // and with a default behaviour of storing changes
     // in the component internal 'state'
-    setter: function(propName, newValue) {
-        return (function(e) {
-            return this.set(propName, newValue, { domEvent: e });
+    setter: function (propName, newValue) {
+        return (function (e) {
+            return this.set(propName, newValue, {domEvent: e});
         }).bind(this);
     }
 };
