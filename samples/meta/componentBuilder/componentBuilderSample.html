@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Textbox</title>
+
+    <!-- Normalize -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.2/normalize.min.css" type="text/css"
+          rel="stylesheet"/>
+
+    <!-- React.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.12.2/react-with-addons.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.12.2/JSXTransformer.js"></script>
+
+    <!-- Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap.min.css" type="text/css"
+          rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap-theme.css" type="text/css"
+          rel="stylesheet"/>
+
+    <!-- HighlightJs -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css" type="text/css" rel="stylesheet" />
+    <script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/languages/javascript.min.js"></script>
+
+    <!-- React-components-sample -->
+    <link href="../../samples.css" type="text/css" rel="stylesheet" />
+    <script src="../../codeSample.jsx" type="text/jsx"></script>
+
+    <!-- React-components -->
+    <link href="../../../src/components/navigation/pager/pager.css" type="text/css" rel="stylesheet"/>
+    <script src="../../../src/components/gearz.mixin.js"></script>
+    <script src="../../../src/components/meta/componentBuilder/componentBuilder.jsx" type="text/jsx"></script>
+    <script src="../../../src/components/layout/formGroup/formGroup.jsx" type="text/jsx"></script>
+    <script src="../../../src/components/editors/textbox/textbox.jsx" type="text/jsx"></script>
+    <script src="componentBuilderSample.jsx" type="text/jsx"></script>
+
+</head>
+
+<body>
+<div class="container">
+    <div id="output"></div>
+    <script type="text/jsx">
+        React.render(
+                <ComponentBuilderSample />,
+                document.getElementById("output")
+        );
+    </script>
+</div>
+</body>
+
+</html>
