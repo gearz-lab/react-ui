@@ -15,17 +15,13 @@ var TabControlSample = React.createClass({
                 <CodeSample
                     component={
                        <TabControl activeTab="second">
-                           <Tab name="first" displayName="second">
-                               <Textbox
-                                   id="textbox1"
-                                   value="something"
-                               />
+                           <Tab name="first" displayName="First">
+                               <p>First tab content</p>
+                               <Textbox id="myTextbox1"/>
                            </Tab>
                            <Tab name="second" displayName="Second">
-                               <Textbox
-                                   id="textbox2"
-                                   value="something else"
-                               />
+                               <p>Second tab content</p>
+                               <Textbox id="myTextbox2"/>
                            </Tab>
                        </TabControl>
                         }

@@ -11,7 +11,7 @@ var Tab = React.createClass({
 
     render: function () {
         var active = this.get("active");
-        return <div class={ active ? "tabControl-tab active" : "tabControl-tab" } >
+        return <div>
                 { this.props.children }
             </div>
     }

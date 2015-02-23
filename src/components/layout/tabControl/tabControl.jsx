@@ -23,11 +23,13 @@ var TabControl = React.createClass({
         }
 
         return <div className="tabControl">
-                <TabHeader tabs={tabHeaderItems} activeTab={activeTab} onActiveTabChanged={ this.activeTabChanged } />
+                <TabHeader tabs={tabHeaderItems} activeTab={activeTab} onActiveTabChange={ this.activeTabChanged } />
                 <div className="tabControl-content">
                     { this.props.children.map(function(item) {
-
-                        return item;
+                        var tabName = item.props.name;
+                        return <div className={ activeTab == tabName ? "tab activeTab" : "tab" }>
+                                {item}
+                            </div>;
                     }) }
                 </div>
             </div>;
