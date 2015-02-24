@@ -1,124 +1,231 @@
 var TreeView = React.createClass({
     mixins: [gearz],
-    propTypes: {
 
+    propTypes: {
         data: React.PropTypes.object.isRequired
     },
+
+    /**
+     * ReactJS function to get the component initial state.
+     * @returns {{nodesCache: {}}}
+     */
     getInitialState: function () {
-        return {}
+        return {
+            nodesCache: {}
+        };
     },
 
-    // returns a list of flat data. The type of each node is "flatTreeNode"
-    traverseData: function (hierachicalData) {
-        var flatData = [];
+    /**
+     * Returns a list containing information about all nodes in a nodes collection.
+     * @param nodes {Object | Array}
+     *      An object or array representing a nodes collection.
+     *      Each key of this object or array, contains a child node.
+     *      A child node may have an arbitrary set of properties, but children must be in a property called 'nodes'.
+     * @param path {Array=}
+     *      Path to the node to which the passed nodes collection belongs.
+     * @param output {Array=}
+     *      Optional array to which items will be pushed, and then returned.
+     *      If none is passed, then a new array is created, and returned.
+     * @returns {Array}
+     *      An array containing information about all nodes in the tree analysed in pre-order.
+     *      Take a look at http://en.wikipedia.org/wiki/Tree_traversal#Pre-order
+     */
+    flattenNodes: function (nodes, path, output) {
+        var flatData = output || [];
 
-        var traverseInternal = function (currentKey, level, parentData, data) {
-            for (var prop in data) {
-                var newKey = currentKey ? currentKey + "." + prop : prop;
-                flatData.push({
-                    key: newKey,
-                    parentKey: currentKey,
-                    data: data[prop],
-                    childCount: data[prop].nodes ? Object.keys(data[prop].nodes).length : 0,
-                    level: level
-                });
-                traverseInternal(newKey, level + 1, data[prop], data[prop].nodes)
+        for (var key in nodes)
+            if (nodes.hasOwnProperty(key)) {
+                var info = {
+                    node: nodes[key],
+                    path: (path || []).concat(key)
+                };
+                flatData.push(info);
+                this.flattenNodes(info.node.nodes, info.path, flatData);
             }
-        }
-
-        traverseInternal("", 0, null, hierachicalData);
 
         return flatData;
     },
 
-    updateState: function (key, collapsed) {
-        /* builds an object to update based on the following example
-             var newData = React.addons.update(myData, {
-                 x: {y: {z: {$set: 7}}},
-                 a: {b: {$push: [9]}}
-             });
-         */
-        var keyParts = key.split(".");
-        var updateObject = {};
-        var targetObject = updateObject;
-        var originalObjectObject = updateObject;
-        for (var i = 0; i < keyParts.length; i++) {
-            updateObject[keyParts[i]] = {nodes: {}};
-            targetObject = updateObject[keyParts[i]];
-            updateObject = updateObject[keyParts[i]].nodes;
+    /**
+     * Gets the nodes corresponding to each key in a `path`.
+     * E.g.:
+     *      `nodes` = {A: {B: {C: {}}}}
+     *      `path` = ["A", "B", "C"]
+     *      `return` => [{B: {C: {}}}]
+     * @param nodes {Object | Array}
+     *      An object or array representing a nodes collection.
+     *      Each key of this object or array, contains a child node.
+     *      A child node may have an arbitrary set of properties, but children must be in a property called 'nodes'.
+     * @param path {Array}
+     *      Path to get the nodes from. Each `path` key will be mapped to the corresponding node in the tree.
+     * @param output {Array=}
+     *      Optional array to which items will be pushed, and then returned.
+     *      If none is passed, then a new array is created, and returned.
+     * @returns {Array}
+     *      An array containing the nodes that correspond to each `path` key.
+     */
+    getPathNodes: function (nodes, path, output) {
+        var sequence = output || [];
+
+        for (var it = 0; it < path.length; it++) {
+            var key = path[it];
+            if (!nodes || !nodes.hasOwnProperty(key))
+                break;
+            var node = nodes[key];
+            sequence.push(node);
+            nodes = node.nodes;
         }
-        targetObject.collapsed = {$set: collapsed};
-        /* originalObjectObject now has the following format:
-            { rootNode: { nodes: { anotherNode: { $set: collapsed} } }  }
-         */
-        var newData = React.addons.update(this.get("data"), originalObjectObject);
-        this.set("data", newData);
+
+        return sequence;
     },
 
+    /**
+     * Merges two nodes, the main node with all needed descendants and values,
+     * and another source with default descendants and values.
+     * @param main {Object|Array}
+     *      An object or array containing the main descendants and values,
+     *      that have precedence over the descendants and values from the default node.
+     * @param defaults {Object|Array}
+     *      An object or array containing default descendants and values,
+     *      that are alternatives for elements missing from the main node.
+     * @returns {Object|Array}
+     *      An object or array containing the merged descendants and values from the main node and the default node.
+     */
+    mergeNodeValues: function (main, defaults) {
+        var result = typeof main == 'object' ? {} : Array.isArray(main) ? [] : null;
+
+        if (!result)
+            throw new Error("Argument `main` must be an object or an array.");
+
+        if (typeof defaults != 'object' && Array.isArray(defaults))
+            throw new Error("Argument `defaults` must be an object or an array.");
+
+        for (var key2 in defaults)
+            if (defaults.hasOwnProperty(key2) && key2 != "nodes")
+                result[key2] = defaults[key2];
+
+        for (var key3 in main)
+            if (main.hasOwnProperty(key3))
+                if (defaults.hasOwnProperty(key3) && key3 == "nodes")
+                    result[key3] = this.mergeNodeCollections(main[key3], defaults[key3]);
+                else
+                    result[key3] = main[key3];
+
+        return result;
+    },
+
+    /**
+     * Merges two node-collections.
+     * @param main {Object}
+     * @param defaults {Object}
+     * @returns {Object}
+     */
+    mergeNodeCollections: function (main, defaults) {
+        var result = {};
+
+        for (var key1 in main)
+            if (main.hasOwnProperty(key1))
+                if (defaults.hasOwnProperty(key1))
+                    result[key1] = this.mergeNodeValues(main[key1], defaults[key1]);
+                else
+                    result[key1] = main[key1];
+
+        return result;
+    },
+
+    /**
+     * Handles all node changes and triggers events indicating what node changed,
+     * and what value of the node changed.
+     * @param eventObject {Object}
+     *      An object containing information about the event.
+     */
+    onNodeChange: function (eventObject) {
+        function mergeOrCreate(previousValue) {
+            return function (value) {
+                return React.addons.update(typeof value != 'object' ? {} : value, previousValue);
+            };
+        }
+
+        // Input:
+        //      eventObject.path = ["app","page","editPanel"]
+        //      eventObject.key = "collapsed"
+        //      eventObject.value = true
+        // Output:
+        //      merger = {nodes: {$mergeOrCreate: {app: {$mergeOrCreate: {page: {$mergeOrCreate: {editPanel: {$mergeOrCreate: {collapsed: {$set: true}}}}}}}}}}
+        var setter = {};
+        setter[eventObject.key] = {$set: eventObject.value};
+        var merger = eventObject.path.reduceRight((innerMerger, currentPathItem) => {
+            var itemMerger = {};
+            itemMerger[currentPathItem] = {$apply: mergeOrCreate(innerMerger)};
+            var nodesMerger = {nodes: {$apply: mergeOrCreate(itemMerger)}};
+            return nodesMerger;
+        }, setter);
+
+        // determining what is the new state
+        var newState = React.addons.update(this.state, {nodesCache: merger.nodes});
+        this.setState(newState);
+
+        // calling external event handlers
+        if (eventObject.trigger(eventObject.genericEventName))
+            return;
+
+        if (eventObject.trigger(eventObject.specificEventName))
+            return;
+    },
+
+    /**
+     * Determined whether a node visible or not.
+     * A node is invisible when any ancestor node is collapsed.
+     * @param nodes {Object|Array}
+     *      An object or array that represents the root node, from which path nodes will be taken.
+     * @param path {Array}
+     *      An array containing the path components into the passed node.
+     * @returns {boolean}
+     *      True if the node is hidden; otherwise false.
+     */
+    isNodeHidden: function (nodes, path) {
+        var ancestors = this.getPathNodes(nodes, path);
+        ancestors.pop();
+        return ancestors
+            .map(x => x.collapsed)
+            .reduce((a, b) => a || b, false);
+    },
+
+    /**
+     * ReactJS rendering function.
+     * @returns {XML}
+     */
     render: function () {
+        var nodes = this.get("nodes");
 
-        var that = this;
-        var data = this.get("data");
+        var mergedNodes = this.mergeNodeCollections(nodes, this.state.nodesCache);
+        var flattenNodes = this.flattenNodes(mergedNodes);
 
-        var traversedData = this.traverseData(data);
-
-        // computes the paddinng-left of a node
-        var computeIdentMargin = function (node) {
-            var offset = 10;
-            return (offset + node.level * 15) + "px";
-        }
-
-        // determins whether or no the node is hidden
-        var isNodeHidden = function (node) {
-            // returns a hierarchical node that matches the given key
-            var getNode = function (key) {
-                for (var i = 0; i < traversedData.length; i++)
-                    if (traversedData[i].key == key)
-                        return traversedData[i];
-                return null;
-            }
-            var nodeParent = getNode(node.parentKey);
-            if (nodeParent == null)
-                return false;
-            if (nodeParent.data.collapsed == true)
-                return true;
-            return isNodeHidden(nodeParent)
-        }
-
-        // toggles the state of the given node
-        var toggleState = function (node) {
-            that.updateState(node.key, !node.data.collapsed);
-        }
+        var children = flattenNodes.map(info => (
+            this.isNodeHidden(mergedNodes, info.path) ?
+                null :
+                <TreeRow
+                    nodes={info.node.nodes}
+                    collapsed={info.node.collapsed}
+                    display={info.node.display}
+                    path={info.path}
+                    onAnyChange={e => {
+                        var newPath = Object.freeze([].concat(info.path));
+                        var eventData = e.merge({
+                            target: this,
+                            path: newPath,
+                            specificEventName: "Node" + e.specificEventName
+                        });
+                        this.onNodeChange(eventData);
+                    }}
+                />
+        ));
 
         return (
             <ul className="list-group">
-            { traversedData.map(function (item) {
-                return isNodeHidden(item) ? null :
-                    <li className="list-group-item noselect" style={{paddingLeft: computeIdentMargin(item)}}>
-                        <span
-                            className={
-                                item.childCount ?
-                                (item.data.collapsed ? "treeView-toggle-button glyphicon glyphicon-triangle-right" : "treeView-toggle-button glyphicon glyphicon-triangle-bottom")
-                                    : "treeView-toggle-button glyphicon glyphicon-leaf"
-                                }
-                            onClick={ function () {
-                                toggleState(item)
-                            } } >
-                        </span>
-                        <span className="treeView-content">
-                            { item.data.display }
-                        </span>
-                        {
-                            item.childCount ?
-                                    <span className="badge">
-                                        { item.childCount }
-                                    </span>
-                                :
-                                null
-                        }
-                    </li>
-            }) }
+                {children}
             </ul>
         );
     }
 });
+

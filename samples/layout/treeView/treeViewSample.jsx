@@ -6,7 +6,7 @@ var TreeViewSample = React.createClass({
                 app: {
                     display: "ApplicationControl",
                     nodes: {
-                        page: {
+                            page: {
                             display: "PageControl",
                             nodes: {
                                 editPanel: {
@@ -16,7 +16,7 @@ var TreeViewSample = React.createClass({
                                             display: "Panel (Main)",
                                             nodes: {
                                                 name: {
-                                                    display: "TexboxControl (Name)",
+                                                    display: "TexboxControl (Name)"
                                                 },
                                                 dateOfBirth: {
                                                     display: "DatePickerControl (Date of Birth)"
@@ -40,8 +40,47 @@ var TreeViewSample = React.createClass({
                         }
                     }
                 }
-            }
+            },
 
+            treeView2: [
+                {
+                    display: "ApplicationControl",
+                    nodes: [
+                        {
+                            display: "PageControl",
+                            nodes: [
+                                {
+                                    display: "StackPanelControl",
+                                    nodes: [
+                                        {
+                                            display: "Panel (Main)",
+                                            nodes: [
+                                                {
+                                                    display: "TexboxControl (Name)"
+                                                },
+                                                {
+                                                    display: "DatePickerControl (Date of Birth)"
+                                                },
+                                                {
+                                                    display: "ToggleButtonControl (Gender)"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            display: "Panel (Additional Info)",
+                                            nodes: [
+                                                {
+                                                    display: "ToogleButtonControl (Is Responsible)"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
         };
     },
     render: function () {
@@ -59,12 +98,19 @@ var TreeViewSample = React.createClass({
 
                 <CodeSample
                     component={
-                        <TreeView data={this.state.treeView1} />
+                        <TreeView nodes={this.state.treeView2} />
                         }
                     sourceCode= {{
                         __html: ""
                     }}
                 />
+                <p>
+                    <strong>Notes:</strong> when using internal state to store node attributes,
+                    the values outlive the nodes sent through the <code>nodes</code> prop.
+                    This means that even if a collapsed node is removed from the tree,
+                    it is still marked as being collapsed, so that if the node is reinserted in the tree
+                    it appears collapsed again.
+                </p>
             </div>
         );
     }
