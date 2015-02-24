@@ -2,6 +2,11 @@ function getRouter(){
     var router =
         new Router({
             basePath: "gearz-components/samples/navigation",
+
+            //  To support areas, we need to indicate a global default value for the `area` attribute.
+            // But don't think that `area` is a special key-word, it isn't. The `globals` definitions
+            // just takes name-value pairs, and make these pairs globally available to all routes.
+            // This means that, by adding `area: ""` to the list,
             globals: {area: ""},
             mixins: [routerMixins.location]
         })

@@ -59,7 +59,7 @@ var ComponentBuilderSample = React.createClass({
                 }\n\
             ]\n\
         }\n\
-    ]},\n\
+    },\n\
     {\n\
         type: \"button\",\n\
         props: {\n\
@@ -68,7 +68,7 @@ var ComponentBuilderSample = React.createClass({
             }\n\
         },\n\
         children: \"Click here to activate the 'onClick' event handler\"\n\
-    }\n\
+    ]}\n\
 />\
 "
                     }}
