@@ -1,0 +1,15 @@
+.tabControl a {
+    cursor: pointer;
+}
+
+.tabControl-content {
+    padding: 10px;
+}
+
+.tabControl .tab {
+    display: none;
+}
+
+.tabControl .tab.activeTab {
+    display: block;
+}

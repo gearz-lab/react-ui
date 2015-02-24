@@ -12,10 +12,10 @@ var TabHeader = React.createClass({
         var activeTab = this.get("activeTab");
         var tabs = this.get("tabs");
 
-        return <ul className="nav nav-tabs">
+        return <ul className="nav nav-tabs tabControl">
         { tabs.map(function (item) {
             return <li role="presentation" className={ item.name == activeTab ? "active" : "" }>
-                <a href="#" onClick={ that.setter("activeTab", item.name) }>{ item.displayName }</a>
+                <a onClick={ that.setter("activeTab", item.name) }>{ item.displayName }</a>
             </li>;
         })}
         </ul>
