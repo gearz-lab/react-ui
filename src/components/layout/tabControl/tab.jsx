@@ -5,12 +5,9 @@ var Tab = React.createClass({
         name: React.PropTypes.string.isRequired,
         // the tab display name
         displayName: React.PropTypes.string.isRequired,
-        // whether or not this tab is active. The tab will not render if not
-        active: React.PropTypes.bool
     },
 
     render: function () {
-        var active = this.get("active");
         return <div>
                 { this.props.children }
             </div>
