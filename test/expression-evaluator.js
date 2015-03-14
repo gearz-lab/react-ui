@@ -1,6 +1,6 @@
 var requirejs = require("requirejs");
-var assert = require("assert");
-var should = require("should");
+var assert = require("chai").assert;
+var should = require("chai").should;
 requirejs.config({
     baseUrl: 'src/lib',
     nodeRequire: require
