@@ -1,8 +1,21 @@
-require("amd-loader");
-var assert = require('assert')
-var textExpressionEvaluator = require('../src/lib/text-expression-evaluator');
+var requirejs = require("requirejs");
+var assert = require("assert");
+var should = require("should");
+requirejs.config({
+    baseUrl: 'src/lib',
+    nodeRequire: require
+});
 
 describe('Text expression evaluator', function() {
+
+    var textExpressionEvaluator;
+    before(function (done) {
+        requirejs(['text-expression-evaluator'], function (d1) {
+            textExpressionEvaluator = d1;
+            done();
+        });
+    });
+
     describe('Literals', function() {
         it('should evaluate number operations', function() {
             assert.strictEqual(2, textExpressionEvaluator.eval('1 + 1'));
