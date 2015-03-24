@@ -1,5 +1,8 @@
+var React = require("react");
+var gearzMixin = require("../../gearz.mixin");
+
 var ComponentBuilder = React.createClass({
-    mixins: [gearz],
+    mixins: [gearzMixin],
     propTypes: {},
     isUpper: function (x) {
         var u = x.toUpperCase(),
@@ -50,3 +53,5 @@ var ComponentBuilder = React.createClass({
         );
     }
 });
+
+module.exports = ComponentBuilder;

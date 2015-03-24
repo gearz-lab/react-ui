@@ -126,3 +126,5 @@ var gearz = {
         }).bind(this);
     }
 };
+
+module.exports = gearz;

@@ -1,5 +1,8 @@
+var React = require("react");
+var gearzMixin = require("../../gearz.mixin");
+
 var Pager = React.createClass({
-    mixins: [gearz],
+    mixins: [gearzMixin],
     render: function() {
         var page = this.get("page");
         var pageCount = this.props.count / this.props.pageSize,
@@ -27,3 +30,5 @@ var Pager = React.createClass({
         );
     }
 });
+
+module.exports = Pager;

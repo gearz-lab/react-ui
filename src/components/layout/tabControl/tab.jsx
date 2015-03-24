@@ -1,5 +1,8 @@
+var React = require("react");
+var gearzMixin = require("../../gearz.mixin");
+
 var Tab = React.createClass({
-    mixins: [gearz],
+    mixins: [gearzMixin],
     propTypes: {
         // the tab name
         name: React.PropTypes.string.isRequired,
@@ -13,3 +16,5 @@ var Tab = React.createClass({
             </div>
     }
 });
+
+module.exports = Tab;

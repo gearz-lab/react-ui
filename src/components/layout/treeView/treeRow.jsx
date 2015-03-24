@@ -1,5 +1,8 @@
+var React = require("react");
+var gearzMixin = require("../../gearz.mixin");
+
 var TreeRow = React.createClass({
-    mixins: [gearz],
+    mixins: [gearzMixin],
     propTypes: {
         onAnyChange: React.PropTypes.func,
         onCollapsedChange: React.PropTypes.func,
@@ -49,3 +52,5 @@ var TreeRow = React.createClass({
         );
     }
 });
+
+module.exports = TreeRow;

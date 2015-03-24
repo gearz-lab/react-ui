@@ -1,7 +1,15 @@
 {
   "devDependencies": {
+    "browserify": "^9.0.3",
     "chai": "^2.1.1",
     "mocha": "^2.2.1",
-    "requirejs": "^2.1.16"
+    "react": "^0.13.1",
+    "react-tools": "^0.13.1",
+    "reactify": "^1.1.0",
+    "through": "^2.3.6"
+  },
+  "scripts": {
+    "build": "browserify -t reactify --external react ./src/index.js > ./dist/react-components.js"
   }
+
 }

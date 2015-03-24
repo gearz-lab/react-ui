@@ -1,5 +1,8 @@
+var React = require("react");
+var gearzMixin = require("../../gearz.mixin");
+
 var StackPanel = React.createClass({
-    mixins: [gearz],
+    mixins: [gearzMixin],
     propTypes: {
     },
     render: function () {
@@ -10,3 +13,5 @@ var StackPanel = React.createClass({
         );
     }
 });
+
+module.exports = StackPanel;

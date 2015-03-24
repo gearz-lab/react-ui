@@ -1,5 +1,8 @@
+var React = require("react");
+var gearzMixin = require("../../gearz.mixin");
+
 var FormGroup = React.createClass({
-    mixins: [gearz],
+    mixins: [gearzMixin],
     propTypes: {
         // The display name
         displayName: React.PropTypes.string.isRequired,
@@ -18,3 +21,5 @@ var FormGroup = React.createClass({
         );
     }
 });
+
+module.exports = FormGroup;

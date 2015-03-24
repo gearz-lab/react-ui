@@ -1,5 +1,8 @@
+var React = require("react");
+var gearzMixin = require("../../gearz.mixin");
+
 var Link = React.createClass({
-    mixins: [gearz],
+    mixins: [gearzMixin],
     processAjaxData: function (response, urlPath) {
         document.getElementById("content").innerHTML = response.html;
         document.title = response.pageTitle;
@@ -43,3 +46,5 @@ var Link = React.createClass({
         );
     }
 });
+
+module.exports = Link;

@@ -1,5 +1,8 @@
+var React = require("react");
+var gearzMixin = require("../../gearz.mixin");
+
 var TabHeader = React.createClass({
-    mixins: [gearz],
+    mixins: [gearzMixin],
     propTypes: {
         // Active tab name
         activeTab: React.PropTypes.string.isRequired,
@@ -21,3 +24,5 @@ var TabHeader = React.createClass({
         </ul>
     }
 });
+
+module.exports = TabHeader;

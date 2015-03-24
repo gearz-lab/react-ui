@@ -1,5 +1,8 @@
+var React = require("react");
+var gearzMixin = require("../../gearz.mixin");
+
 var TreeView = React.createClass({
-    mixins: [gearz],
+    mixins: [gearzMixin],
 
     propTypes: {
         data: React.PropTypes.object.isRequired
@@ -229,3 +232,4 @@ var TreeView = React.createClass({
     }
 });
 
+module.exports = TreeView;
