@@ -12,7 +12,12 @@ Clone the rep:
 
     $ git clone https://github.com/gearz-lab/react-components.git
 
-Install the dependencies:
+Install global CLIs:
+
+    $ npm install -g browserify
+    $ npm install -g uglify-js
+
+Install local dependencies dependencies:
 
     $ npm install
 

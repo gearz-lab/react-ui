@@ -6,10 +6,11 @@
     "react": "^0.13.1",
     "react-tools": "^0.13.1",
     "reactify": "^1.1.0",
-    "through": "^2.3.6"
+    "through": "^2.3.6",
+    "uglify-js": "^2.4.17",
+    "uglifyjs": "^2.4.10"
   },
   "scripts": {
-    "build": "browserify -t reactify --external react ./src/index.js > ./dist/react-components.js"
+    "build": "browserify -t reactify --external react ./src/index.js > ./dist/react-components.js | uglifyjs ./dist/react-components.js > ./dist/react-components.min.js"
   }
-
 }
