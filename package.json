@@ -11,6 +11,6 @@
     "uglifyjs": "^2.4.10"
   },
   "scripts": {
-    "build": "browserify -t reactify --external react ./src/index.js > ./dist/react-components.js | uglifyjs ./dist/react-components.js > ./dist/react-components.min.js"
+    "build": "browserify -t reactify --external react ./src/index.js > ./dist/react-components.js && uglifyjs ./dist/react-components.js > ./dist/react-components.min.js"
   }
 }
