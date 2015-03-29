@@ -31,7 +31,10 @@
     "reactjs",
     "javascript"
   ],
-  "author": "Andre Pena, Miguel Angelo",
+  "authors": [
+    "Andre Pena",
+    "Miguel Angelo"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/gearz-lab/react-ui/issues"
