@@ -1,7 +1,14 @@
 React-UI
 ===
 
-A library for ReactJS components. This is part of the Gearz project. Still a #workinprogress
+A components library for ReactJS. This is part of the Gearz project. Still a #workinprogress
+
+Installing
+---
+
+Make sure you have `Node.js` installed.
+
+    $ npm install reactui
 
 Building
 ---
