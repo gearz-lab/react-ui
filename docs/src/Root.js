@@ -2,52 +2,53 @@ import React from 'react';
 import Router from 'react-router';
 
 const Root = React.createClass({
-    statics: {
+  statics: {
 
-        /**
-         * Get the doctype the page expects to be rendered with
-         *
-         * @returns {string}
-         */
-            getDoctype() {
-                return '<!doctype html>';
-            },
-
-        /**
-         * Get the list of pages that are renderable
-         *
-         * @returns {Array}
-         */
-            getPages() {
-                return [
-                    'index.html',
-                    'getting-started.html',
-                    'components.html'
-                ];
-            },
-
-            renderToString(props) {
-                return Root.getDoctype() + React.renderToString(<Root {...props} />);
-            },
-
-        /**
-         * Get the Base url this app sits at
-         * This url is appended to all app urls to make absolute url's within the app.
-         *
-         * @returns {string}
-         */
-            getBaseUrl() {
-            return '/';
-        }
+    /**
+     * Get the doctype the page expects to be rendered with
+     *
+     * @returns {string}
+     */
+    getDoctype() {
+      return '<!doctype html>';
     },
 
-    render() {
-        // Dump out our current props to a global object via a script tag so
-        // when initialising the browser environment we can bootstrap from the
-        // same props as what each page was rendered with.
-        let browserInitScriptObj = {
-            __html:
-                `window.INITIAL_PROPS = ${JSON.stringify(this.props)};
+    /**
+     * Get the list of pages that are renderable
+     *
+     * @returns {Array}
+     */
+    getPages() {
+      return [
+        'index.html',
+        'getting-started.html',
+        'components.html'
+      ];
+    },
+
+    renderToString(props) {
+      return Root.getDoctype() +
+        React.renderToString(<Root {...props} />);
+    },
+
+    /**
+     * Get the Base url this app sits at
+     * This url is appended to all app urls to make absolute url's within the app.
+     *
+     * @returns {string}
+     */
+    getBaseUrl() {
+      return '/';
+    }
+  },
+
+  render() {
+    // Dump out our current props to a global object via a script tag so
+    // when initialising the browser environment we can bootstrap from the
+    // same props as what each page was rendered with.
+    let browserInitScriptObj = {
+      __html:
+        `window.INITIAL_PROPS = ${JSON.stringify(this.props)};
         // console noop shim for IE8/9
         (function (w) {
           var noop = function () {};
@@ -58,10 +59,10 @@ const Root = React.createClass({
             });
          }
         }(window));`
-        };
+    };
 
-        let head = {
-            __html: `<title>React Bootstrap</title>
+    let head = {
+      __html: `<title>React Bootstrap</title>
         <meta http-equiv='X-UA-Compatible' content='IE=edge' />
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
         <link href='assets/bundle.css' rel='stylesheet' />
@@ -72,21 +73,21 @@ const Root = React.createClass({
         <script src='http://cdnjs.cloudflare.com/ajax/libs/es5-shim/3.4.0/es5-shim.js'></script>
         <script src='http://cdnjs.cloudflare.com/ajax/libs/es5-shim/3.4.0/es5-sham.js'></script>
         <![endif]-->`
-        };
+    };
 
-        return (
-            <html>
-            <head dangerouslySetInnerHTML={head} />
+    return (
+        <html>
+          <head dangerouslySetInnerHTML={head} />
 
-            <body>
+          <body>
             <Router.RouteHandler />
 
             <script dangerouslySetInnerHTML={browserInitScriptObj} />
             <script src='assets/bundle.js' />
-            </body>
-            </html>
-        );
-    }
+          </body>
+        </html>
+      );
+  }
 });
 
 
