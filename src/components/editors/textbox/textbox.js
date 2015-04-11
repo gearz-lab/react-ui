@@ -1,7 +1,7 @@
-var React = require("react");
-var gearzMixin = require("../../gearz.mixin");
+import React from 'react';
+import gearzMixin from '../../gearz.mixin';
 
-var Textbox = React.createClass({
+const Textbox = React.createClass({
     mixins: [gearzMixin],
     propTypes: {
         // The input id
@@ -71,4 +71,4 @@ var Textbox = React.createClass({
     }
 });
 
-module.exports = Textbox;
+export default Textbox;

@@ -1,4 +1,4 @@
-import Textbox from "./components/editors/textbox/textbox.jsx";
+import Textbox from "./components/editors/textbox/textbox.js";
 import FormGroup from "./components/layout/formGroup/formGroup.jsx";
 import StackPanel from "./components/layout/stackPanel/stackPanel.jsx";
 import Tab from "./components/layout/tabControl/tab.jsx";

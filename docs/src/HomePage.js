@@ -12,7 +12,7 @@ const HomePage = React.createClass({
           <main className="bs-docs-masthead" id="content" role="main">
             <div className="container">
               <span className="bs-docs-booticon bs-docs-booticon-lg bs-docs-booticon-outline"></span>
-              <p className="lead">Bootstrap based components for React</p>
+              <p className="lead">Bootstrap based data components for React</p>
             </div>
           </main>
 

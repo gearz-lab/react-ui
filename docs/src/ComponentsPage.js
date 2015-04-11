@@ -12,6 +12,7 @@ import PageHeader from './PageHeader';
 import PageFooter from './PageFooter';
 import ReactPlayground from './ReactPlayground';
 import Samples from './Samples';
+import Textbox from '../../src/components/editors/textbox/textbox';
 
 const ComponentsPage = React.createClass({
   getInitialState() {
