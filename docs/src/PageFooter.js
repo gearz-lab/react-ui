@@ -34,7 +34,7 @@ const PageHeader = React.createClass({
                 </li>
               </ul>
             </div>
-            <p>Code licensed under <a href='https://github.com/react-bootstrap/react-bootstrap/blob/master/LICENSE' target='_blank'>MIT</a>.</p>
+            <p>Code licensed under <a href='https://github.com/gearz-lab/react-ui/blob/master/LICENSE' target='_blank'>MIT</a>.</p>
             <ul className='bs-docs-footer-links muted'>
               <li>Currently v{packageJSON.version}</li>
               <li>·</li>

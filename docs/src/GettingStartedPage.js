@@ -12,7 +12,7 @@ const Page = React.createClass({
 
           <PageHeader
             title="Getting started"
-            subTitle="An overview of React-Bootstrap and how to install and use." />
+            subTitle="An overview of ReactUI and how to install and use." />
 
           <div className="container bs-docs-container">
             <div className="row">
@@ -27,12 +27,12 @@ const Page = React.createClass({
                   <div className="highlight">
                     <pre><code className="shell">{`
   $ npm install react
-  $ npm install react-bootstrap
+  $ npm install reactui
                     `}</code></pre>
                     <pre><code className="js">{`
-  var Alert = require('react-bootstrap/lib/Alert');
+  var Alert = require('reactui/lib/Textbox');
   // or
-  var Alert = require('react-bootstrap').Alert;
+  var Alert = require('reactui').Textbox;
                     `}</code></pre>
                   </div>
 
@@ -40,23 +40,23 @@ const Page = React.createClass({
                   <div className="highlight">
                     <pre><code className="shell">{`
   $ bower install react
-  $ bower install react-bootstrap
+  $ bower install reactui
                     `}</code></pre>
                     <pre><code className="js">{`
-  define(['react-bootstrap/lib/Alert'], function(Alert) { ... });
+  define(['reactui/lib/Textbox'], function(Alert) { ... });
   // or
-  define(['react-bootstrap'], function(ReactBootstrap) { var Alert = ReactBootstrap.Alert; ... });
+  define(['reactui'], function(ReactUI) { var Textbox = ReactUI.Textbox; ... });
                     `}</code></pre>
                   </div>
 
                   <h3>Browser globals</h3>
-                  <p>The bower repo contains <code>react-bootstrap.js</code> and <code>react-bootstrap.min.js</code> with all components exported in the <code>window.ReactBootstrap</code> object.</p>
+                  <p>The bower repo contains <code>react-ui.js</code> and <code>react-ui.min.js</code> with all components exported in the <code>window.ReactUI</code> object.</p>
                   <div className="highlight">
                     <pre><code className="html">{`
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/<react-version>/react.js"></script>
   <script src="path/to/react-bootstrap-bower/react-bootstrap.min.js"></script>
   <script>
-    var Alert = ReactBootstrap.Alert;
+    var Textbox = ReactUI.Textbox;
   </script>
                     `}</code></pre>
                   </div>
