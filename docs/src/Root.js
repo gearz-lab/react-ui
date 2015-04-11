@@ -62,7 +62,7 @@ const Root = React.createClass({
     };
 
     let head = {
-      __html: `<title>React Bootstrap</title>
+      __html: `<title>React-UI - Bootstrap based components for React</title>
         <meta http-equiv='X-UA-Compatible' content='IE=edge' />
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
         <link href='assets/bundle.css' rel='stylesheet' />

@@ -1,7 +1,7 @@
 import React from 'react';
 import Router, { Link } from 'react-router';
-import Navbar from '../../src/Navbar';
-import Nav from '../../src/Nav';
+import Navbar from 'react-bootstrap/lib/Navbar';
+import Nav from 'react-bootstrap/lib/Nav';
 
 const NAV_LINKS = {
   'getting-started': {
@@ -20,10 +20,10 @@ const NavMain = React.createClass({
   },
 
   render() {
-    let brand = <Link to='home' className="navbar-brand">React Bootstrap</Link>;
+    let brand = <Link to='home' className="navbar-brand">React-UI</Link>;
     let links = Object.keys(NAV_LINKS).map(this.renderNavItem).concat([
       <li key='github-link'>
-        <a href='https://github.com/react-bootstrap/react-bootstrap' target='_blank'>GitHub</a>
+        <a href='https://github.com/gearz-lab/react-ui' target='_blank'>GitHub</a>
       </li>
     ]);
 
