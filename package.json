@@ -7,7 +7,7 @@
   },
   "name": "reactui",
   "description": "A components library for ReactJS. This is part of the Gearz project",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "main": "./src/index.js",
   "directories": {
     "test": "test"
@@ -17,6 +17,7 @@
     "url": "https://github.com/gearz-lab/react-ui.git"
   },
   "keywords": [
+    "reactui",
     "react-ui",
     "react",
     "reactjs",

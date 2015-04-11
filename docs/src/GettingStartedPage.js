@@ -24,24 +24,36 @@ const Page = React.createClass({
                   <p>First add the Bootstrap CSS to your project; check <a href="http://getbootstrap.com/getting-started/" name="Bootstrap Docs">here</a> if you have not already done that. Then:</p>
 
                   <h3>CommonJS</h3>
+
+                    <p>Installing:</p>
+
                   <div className="highlight">
                     <pre><code className="shell">{`
   $ npm install react
   $ npm install reactui
                     `}</code></pre>
+
+                      <p>Using:</p>
+
                     <pre><code className="js">{`
-  var Alert = require('reactui/lib/Textbox');
+  var Textbox = require('reactui/lib/Textbox');
   // or
-  var Alert = require('reactui').Textbox;
+  var Textbox = require('reactui').Textbox;
                     `}</code></pre>
                   </div>
 
                   <h3>AMD</h3>
+
+                    <p>Installing:</p>
+
                   <div className="highlight">
                     <pre><code className="shell">{`
   $ bower install react
   $ bower install reactui
                     `}</code></pre>
+
+                      <p>Using:</p>
+
                     <pre><code className="js">{`
   define(['reactui/lib/Textbox'], function(Alert) { ... });
   // or
@@ -50,7 +62,13 @@ const Page = React.createClass({
                   </div>
 
                   <h3>Browser globals</h3>
+
+                    <p>Installing:</p>
+
                   <p>The bower repo contains <code>react-ui.js</code> and <code>react-ui.min.js</code> with all components exported in the <code>window.ReactUI</code> object.</p>
+
+                    <p>Using:</p>
+
                   <div className="highlight">
                     <pre><code className="html">{`
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/<react-version>/react.js"></script>

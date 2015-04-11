@@ -1,14 +1,51 @@
 React-UI
 ===
 
-A components library for ReactJS. This is part of the Gearz project. Still a #workinprogress
+Bootstrap based data components for React. Check out the [website](http://reactui.com).
 
 Installing
 ---
 
-Make sure you have `Node.js` installed.
+You can import the lib as AMD modules, CommonJS modules, or as a global JS script.
 
-    $ npm install reactui
+First add the Bootstrap CSS to your project; check [here](http://getbootstrap.com/getting-started/) if you have not already done that. Then:
+
+**CommonJS**
+
+Installing:
+
+      $ npm install react
+      $ npm install reactui
+      
+Using:
+      
+      var Textbox = require('reactui/lib/Textbox');
+      // or
+      var Textbox = require('reactui').Textbox;
+      
+**AMD**
+
+Installing:
+
+    $ bower install react
+    $ bower install reactui
+    
+Using:
+
+    define(['reactui/lib/Textbox'], function(Alert) { ... });
+    // or
+    define(['reactui'], function(ReactUI) { var Textbox = ReactUI.Textbox; ... });
+    
+**Browser globals**
+
+Installing:
+
+Include the file `react-ui.js` or `react-ui.min.js` from the `dist` folder into your app. All components are exported
+to the `window.ReactUI` global.
+
+Using:
+
+    var Textbox = ReactUI.Textbox;
 
 Building
 ---
@@ -19,15 +56,22 @@ Clone the rep:
 
     $ git clone https://github.com/gearz-lab/react-ui.git
 
-Install global CLIs:
+Install Webpack:
 
-    $ npm install -g browserify
-    $ npm install -g uglify-js
+    $ npm install -g webpack
 
-Install local dependencies dependencies:
+Install local dependencies:
 
     $ npm install
 
 Build:
 
     $ npm run build
+    
+Build docs only
+
+    $ npm run docs-build
+    
+Run the docs:
+
+    $ npm run docs
