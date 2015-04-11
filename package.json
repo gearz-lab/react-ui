@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build": "browserify -t reactify --external react ./src/index.js > ./dist/react-components.js && uglifyjs ./dist/react-components.js > ./dist/react-components.min.js",
+    "build": "node run-babel tools/build.js",
     "docs-build": "node run-babel tools/build.js --docs-only",
     "docs": "node run-babel docs/server.js",
     "test": "karma start --single-run && npm run lint && npm run build"

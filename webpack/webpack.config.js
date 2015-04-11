@@ -21,13 +21,13 @@ export default (options) => {
 
   const config = {
     entry: {
-      'react-bootstrap': './src/index.js'
+      'react-ui': './src/index.js'
     },
 
     output: {
       path: './dist',
       filename: '[name].js',
-      library: 'ReactBootstrap',
+      library: 'ReactUI',
       libraryTarget: 'umd'
     },
 
