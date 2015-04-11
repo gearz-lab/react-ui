@@ -55,6 +55,14 @@ const ComponentsPage = React.createClass({
             <div className='row'>
               <div className='col-md-9' role='main'>
 
+                {/* FormGroup */}
+                <div className='bs-docs-section'>
+                  <h1 id='formgroup' className='page-header'>FormGroup</h1>
+                  <h2 id='formgroup-options'>Options</h2>
+                  <p>Basic usage</p>
+                  <ReactPlayground codeText={Samples.FormGroup} />
+                </div>
+
                 {/* Buttons */}
                 <div className='bs-docs-section'>
                   <h1 id='buttons' className='page-header'>Buttons <small>Button</small></h1>

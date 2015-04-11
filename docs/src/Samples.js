@@ -7,5 +7,6 @@ export default {
   ButtonDisabled:                require('fs').readFileSync(__dirname + '/../examples/ButtonDisabled.js', 'utf8'),
   ButtonSizes:                   require('fs').readFileSync(__dirname + '/../examples/ButtonSizes.js', 'utf8'),
   ButtonTagTypes:                require('fs').readFileSync(__dirname + '/../examples/ButtonTagTypes.js', 'utf8'),
-  ButtonLoading:                 require('fs').readFileSync(__dirname + '/../examples/ButtonLoading.js', 'utf8')
+  ButtonLoading:                 require('fs').readFileSync(__dirname + '/../examples/ButtonLoading.js', 'utf8'),
+  FormGroup:                     require('fs').readFileSync(__dirname + '/../examples/FormGroup.js', 'utf8')
 };

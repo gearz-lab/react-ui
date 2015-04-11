@@ -1,4 +1,4 @@
-import TextBox from "./components/editors/textbox/textbox.jsx";
+import Textbox from "./components/editors/textbox/textbox.jsx";
 import FormGroup from "./components/layout/formGroup/formGroup.jsx";
 import StackPanel from "./components/layout/stackPanel/stackPanel.jsx";
 import Tab from "./components/layout/tabControl/tab.jsx";
@@ -10,7 +10,7 @@ import Link from "./components/navigation/link/link.jsx";
 import Pager from "./components/navigation/pager/pager.jsx";
 
 export default {
-    TextBox,
+    Textbox,
     FormGroup,
     StackPanel,
     Tab,
