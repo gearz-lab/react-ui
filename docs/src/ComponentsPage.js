@@ -75,7 +75,7 @@ const ComponentsPage = React.createClass({
                 <div className='bs-docs-section'>
                   <h1 id='editors' className='page-header'>Editors</h1>
 
-                  <h2>Textbox</h2>
+                  <h2 id='editors-textbox'>Textbox</h2>
                   <p>Basic usage</p>
                   <ReactPlayground codeText={Samples.EditorsTextBoxBasicUsage}></ReactPlayground>
 
@@ -90,7 +90,18 @@ const ComponentsPage = React.createClass({
 
                 </div>
 
+                <div>
+                  <h1 id='layout' className='page-header'>Layout</h1>
+
+                  <h2 id='layout-treeview'>TreeView</h2>
+                  <p>Basic usage</p>
+                  <ReactPlayground codeText={Samples.LayoutTreeViewBasicUsage}></ReactPlayground>
+
+                </div>
+
               </div>
+
+
 
               <div className='col-md-3'>
                 <Affix
@@ -103,31 +114,12 @@ const ComponentsPage = React.createClass({
                     activeHref={this.state.activeNavItemHref}
                     onSelect={this.handleNavItemSelect}
                     ref='sideNav'>
-                    <SubNav href='#buttons' key={1} text='Buttons'>
-                      <NavItem href='#btn-groups' key={2}>Button groups</NavItem>
-                      <NavItem href='#btn-dropdowns' key={3}>Button dropdowns</NavItem>
+                    <SubNav href='#editors' key={1} text='Editors'>
+                      <NavItem href='#editors-textbox' key={2}>TextBox</NavItem>
                     </SubNav>
-                    <NavItem href='#panels' key={4}>Panels</NavItem>
-                    <NavItem href='#modals' key={5}>Modals</NavItem>
-                    <NavItem href='#tooltips' key={6}>Tooltips</NavItem>
-                    <NavItem href='#popovers' key={7}>Popovers</NavItem>
-                    <NavItem href='#progress' key={8}>Progress bars</NavItem>
-                    <NavItem href='#navs' key={9}>Navs</NavItem>
-                    <NavItem href='#navbars' key={10}>Navbars</NavItem>
-                    <NavItem href='#tabs' key={11}>Togglable tabs</NavItem>
-                    <NavItem href='#pager' key={12}>Pager</NavItem>
-                    <NavItem href='#alerts' key={13}>Alerts</NavItem>
-                    <NavItem href='#carousels' key={14}>Carousels</NavItem>
-                    <NavItem href='#grids' key={15}>Grids</NavItem>
-                    <NavItem href='#listgroup' key={16}>List group</NavItem>
-                    <NavItem href='#labels' key={17}>Labels</NavItem>
-                    <NavItem href='#badges' key={18}>Badges</NavItem>
-                    <NavItem href='#jumbotron' key={19}>Jumbotron</NavItem>
-                    <NavItem href='#page-header' key={20}>Page Header</NavItem>
-                    <NavItem href='#wells' key={21}>Wells</NavItem>
-                    <NavItem href='#glyphicons' key={22}>Glyphicons</NavItem>
-                    <NavItem href='#tables' key={23}>Tables</NavItem>
-                    <NavItem href='#input' key={24}>Input</NavItem>
+                    <SubNav href='#layout' key={3} text='Layout'>
+                      <NavItem href='#layout-treeview' key={4}>TreeView</NavItem>
+                    </SubNav>
                   </Nav>
                   <a className='back-to-top' href='#top'>
                   Back to top

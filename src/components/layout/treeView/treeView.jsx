@@ -1,11 +1,12 @@
 var React = require("react");
+var TreeRow = require("./treeRow.jsx")
 var gearzMixin = require("../../gearz.mixin");
 
 var TreeView = React.createClass({
     mixins: [gearzMixin],
 
     propTypes: {
-        data: React.PropTypes.object.isRequired
+        nodes: React.PropTypes.object.isRequired
     },
 
     /**

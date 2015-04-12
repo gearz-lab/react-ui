@@ -1,6 +1,8 @@
 import Textbox from "./components/editors/textbox/textbox.js";
 import FormGroup from "./components/layout/formGroup/formGroup.jsx";
 import StackPanel from "./components/layout/stackPanel/stackPanel.jsx";
+import TreeView from "./components/layout/treeView/treeView.jsx";
+import TreeRow from "./components/layout/treeView/treeRow.jsx";
 import Tab from "./components/layout/tabControl/tab.jsx";
 import TabControl from "./components/layout/tabControl/tabControl.jsx";
 import TabHeader from "./components/layout/tabControl/tabHeader.jsx";
@@ -13,6 +15,8 @@ export default {
     Textbox,
     FormGroup,
     StackPanel,
+    TreeView,
+    TreeRow,
     Tab,
     TabControl,
     TabHeader,
