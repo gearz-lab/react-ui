@@ -56,62 +56,40 @@ const ComponentsPage = React.createClass({
             <div className='row'>
               <div className='col-md-9' role='main'>
 
-                {/* FormGroup */}
+                {/* General */}
                 <div className='bs-docs-section'>
-                  <h1 id='formgroup' className='page-header'>FormGroup</h1>
-                  <h2 id='formgroup-options'>Options</h2>
+                  <h1 id='general' className='page-header'>General</h1>
+                  <p>ReactUI uses <a href="https://github.com/gearz-lab/statefy">Statefy</a> to control <code>state</code> and <code>props</code>.
+                    We recommend reading it's <a href="https://github.com/gearz-lab/statefy/blob/master/readme.md">documentation</a>.</p>
+
+                  <div className='bs-callout bs-callout-warning'>
+                  <h4>Auto generated events</h4>
+                  <p>Statefy adds auto-generated change events to any <code>props</code>. So, for instance, if a component has
+                  a <code>url</code> prop, then, there's also a <code>onUrlChange</code> event. When this event is handled, if
+                  <code>event.preventDefault()</code> is called, then the component will not update it's internal state and it's
+                  up the the caller to render the component again.</p>
+                  </div>
+                </div>
+
+                {/* General */}
+                <div className='bs-docs-section'>
+                  <h1 id='editors' className='page-header'>Editors</h1>
+
+                  <h2>Textbox</h2>
                   <p>Basic usage</p>
-                  <ReactPlayground codeText={Samples.FormGroup} />
+                  <ReactPlayground codeText={Samples.EditorsTextBoxBasicUsage}></ReactPlayground>
+
+                  <p>Prepending and appending text</p>
+                  <ReactPlayground codeText={Samples.EditorsTextBoxPrependAndAppend}></ReactPlayground>
+
+                  <p>Placeholder</p>
+                  <ReactPlayground codeText={Samples.EditorsTextBoxPlaceholder}></ReactPlayground>
+
+                  <p>Disabled state</p>
+                  <ReactPlayground codeText={Samples.EditorsTextBoxDisabledState}></ReactPlayground>
+
                 </div>
 
-                {/* Buttons */}
-                <div className='bs-docs-section'>
-                  <h1 id='buttons' className='page-header'>Buttons <small>Button</small></h1>
-                  <h2 id='buttons-options'>Options</h2>
-                  <p>Use any of the available button style types to quickly create a styled button. Just modify the
-                    <code>bsStyle</code> prop.</p>
-                  <ReactPlayground codeText={Samples.ButtonTypes} />
-                  <div className='bs-callout bs-callout-warning'>
-                    <h4>Button spacing</h4>
-                    <p>Because React doesn't output newlines between elements, buttons on the same line are displayed
-                    flush against each other. To preserve the spacing between multiple inline buttons, wrap your
-                    button group in <code>{'<ButtonToolbar />'}</code>.</p>
-                  </div>
-                  <h2 id='buttons-sizes'>Sizes</h2>
-                  <p>Fancy larger or smaller buttons? Add <code>bsSize='large'</code>, <code>bsSize='small'</code>, or <code>bsSize='xsmall'</code> for additional sizes.</p>
-                  <ReactPlayground codeText={Samples.ButtonSizes} />
-
-                  <p>Create block level buttons—those that span the full width of a parent— by adding the
-                      <code>block</code> prop.</p>
-                  <ReactPlayground codeText={Samples.ButtonBlock} />
-
-                  <h2 id='buttons-active'>Active state</h2>
-                  <p>To set a buttons active state simply set the components <code>active</code> prop.</p>
-                  <ReactPlayground codeText={Samples.ButtonActive} />
-
-                  <h2 id='buttons-disabled'>Disabled state</h2>
-                  <p>Make buttons look unclickable by fading them back 50%. To do this add the <code>disabled</code>
-                    attribute to buttons.</p>
-                  <ReactPlayground codeText={Samples.ButtonDisabled} />
-
-                  <div className='bs-callout bs-callout-warning'>
-                    <h4>Event handler functionality not impacted</h4>
-                    <p>This prop will only change the <code>{'<Button />'}</code>&#8217;s appearance, not its
-                      functionality. Use custom logic to disable the effect of the <code>onClick</code> handlers.</p>
-                  </div>
-
-                  <h2 id='buttons-tags'>Button tags</h2>
-                  <p>The DOM element tag is choosen automaticly for you based on the props you supply. Passing a
-                    <code>href</code> will result in the button using a <code>{'<a />'}</code> element otherwise a
-                    <code>{'<button />'}</code> element will be used.</p>
-                  <ReactPlayground codeText={Samples.ButtonTagTypes} />
-
-                  <h2 id='buttons-tags'>Button loading state</h2>
-                  <p>When activating an asynchronous action from a button it is a good UX pattern to give the user
-                    feedback as to the loading state, this can easily be done by updating your
-                    <code>{'<Button />'}</code>&#8217;s props from a state change like below.</p>
-                  <ReactPlayground codeText={Samples.ButtonLoading} />
-                </div>
               </div>
 
               <div className='col-md-3'>
