@@ -1,4 +1,4 @@
-var React = require("react");
+var React = require("react/addons");
 var TreeRow = require("./treeRow.jsx")
 var gearzMixin = require("../../gearz.mixin");
 
