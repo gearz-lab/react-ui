@@ -11,6 +11,7 @@ const argv = yargs
 const defaultOptions = {
   development: argv.debug,
   docs: false,
+  css: false,
   test: false,
   optimize: argv.optimizeMinimize
 };
