@@ -19,9 +19,18 @@ gulp.task('build-css', ['clean-css'], function() {
 });
 
 gulp.task('build-lib', function() {
-    var babelCli = 'babel --optional es7.objectRestSpread ./src --out-dir ./lib';
     rimraf('./lib', function(error) {
+        var babelCli = 'babel --optional es7.objectRestSpread ./src --out-dir ./lib';
         exec(babelCli).fail(function(error) { console.log(colors.red(error))});
+    });
+});
+
+gulp.task('build-dist', function() {
+    rimraf('./dist', function(error) {
+        var webpackCli = 'webpack --bail';
+        var webpackCliProduction = 'webpack --bail -p';
+        exec(webpackCli).fail(function(error) { console.log(colors.red(error))})
+            .then(function() {exec(webpackCliProduction).fail(function(error) { console.log(colors.red(error));});});
     });
 });
 
