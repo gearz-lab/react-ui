@@ -1,8 +1,5 @@
 {
   "scripts": {
-    "build": "node run-babel tools/build.js",
-    "docs-build": "node run-babel tools/build.js --docs-only",
-    "css-build": "node run-babel tools/css/build.js",
     "docs": "node run-babel docs/server.js",
     "test": "karma start --single-run && npm run lint && npm run build"
   },
