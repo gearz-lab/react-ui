@@ -1,10 +1,11 @@
+import from 'colors';
 import React from 'react';
 import path from 'path';
 import Router from 'react-router';
 import routes from './src/Routes';
 import Root from './src/Root';
 import fsp from 'fs-promise';
-import { copy } from '../tools/fs-utils';
+import fsep from 'fs-extra-promise';
 import { exec } from 'child-process-promise';
 
 const repoRoot = path.resolve(__dirname, '../');
@@ -32,8 +33,8 @@ export default function BuildDocs() {
 
             return Promise.all(writes.concat([
                 exec(`webpack --config webpack.docs.js -p --bail`),
-                copy(license, docsBuilt),
-                copy(readmeSrc, readmeDest)
+                fsep.copy(license, docsBuilt),
+                fsep.copy(readmeSrc, readmeDest)
             ]));
         })
         .then(() => console.log('Built: '.cyan + 'docs'.green));
