@@ -7,6 +7,7 @@ import Root from './src/Root';
 import fsp from 'fs-promise';
 import fsep from 'fs-extra-promise';
 import { exec } from 'child-process-promise';
+import rimraf from 'rimraf-promise';
 
 const repoRoot = path.resolve(__dirname, '../');
 const docsBuilt = path.join(repoRoot, 'docs-built');
@@ -18,7 +19,7 @@ const readmeDest = path.join(docsBuilt, 'README.md');
 export default function BuildDocs() {
     console.log('Building: '.cyan + 'docs'.green);
 
-    return exec(`rimraf ${docsBuilt}`)
+    return rimraf(docsBuilt)
         .then(() => fsp.mkdir(docsBuilt))
         .then(() => {
             let writes = Root
@@ -32,7 +33,7 @@ export default function BuildDocs() {
                 }));
 
             return Promise.all(writes.concat([
-                exec(`webpack --config webpack.docs.js -p --bail`),
+                exec(`webpack --config webpack.docs.js -p --bail`).fails(function() { console.log('something went wrong'); }),
                 fsep.copy(license, docsBuilt),
                 fsep.copy(readmeSrc, readmeDest)
             ]));

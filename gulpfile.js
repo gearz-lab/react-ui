@@ -10,7 +10,6 @@ var fsep = require('fs-extra-promise');
 var React = require('react');
 var Router = require('react-router');
 var path = require('path');
-var routes = require('./docs/src/Routes');
 var _ = require('lodash');
 
 gulp.task('build-css', function () {
@@ -85,31 +84,10 @@ gulp.task('build-amd', function () {
 });
 
 gulp.task('build-docs', function () {
-    return rimraf('./docs-built').then(function (error) {
-        return fsp.mkdir('./docs-built').then(function () {
-            var docPages = ['index.html', 'getting-started.html', 'components.html'];
-            var writes = docPages.map(function (fileName) {
-
-
-                return new Promise(function (resolve, reject) {
-                    Router.run(routes, '/' + fileName, function (Handler) {
-                        var RootHTML = React.renderToString(React.createElement(Handler));
-                        console.log(RootHTML);
-                        var write = fsp.writeFile(path.join('./docs-built', fileName), RootHTML);
-                        resolve(write);
-                    });
-                });
-
-
-
-            });
-            return Promise.all(writes.concat([
-                exec('webpack --config webpack.docs.js -p --bail'),
-                fsep.copy('./LICENSE', './docs-built/LICENSE'),
-                fsep.copy('./readme.md', './docs-built/readme.md')
-            ]));
-        });
-    });
+    // building the docs require React compilation, which is made automatically
+    // by Babel, so it makes more sense to just run a node script.
+    // Running it through Gulp it not easy.
+    return exec('node run-babel ./tools/build.js');
 });
 
 gulp.task('build', ['build-css', 'build-docs', 'build-lib', 'build-dist', 'build-amd']);
