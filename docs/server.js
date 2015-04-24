@@ -15,6 +15,9 @@ if (development) {
     development: development,
     docs: true
   });
+
+
+
   let publicPath = webpackConfig.output.publicPath;
 
   webpackConfig.output.path = '/';
