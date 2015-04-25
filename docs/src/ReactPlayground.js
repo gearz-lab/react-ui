@@ -1,9 +1,14 @@
 /* eslint-disable */
 import React from 'react';
 import classNames from 'classnames';
+
+// React-UI
 import FormGroup from '../../src/components/layout/formGroup/formGroup.jsx';
 import Textbox from '../../src/components/editors/textbox/textbox';
-import TreeView from '../../src/components/layout/treeView/treeView.jsx';
+import TreeView from '../../src/components/data/treeView/treeView.jsx';
+import SideNav from '../../src/components/navigation/sideNav/SideNav.jsx';
+
+// React-Bootstrap
 import Accordion from 'react-bootstrap/lib/Accordion';
 import Alert from 'react-bootstrap/lib/Alert';
 import Badge from 'react-bootstrap/lib/Badge';

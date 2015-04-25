@@ -35,6 +35,6 @@ const treeNodes = {
 
 const LayoutTreeViewBasicUsage = (
     <TreeView nodes={treeNodes} />
-)
+);
 
 React.render(LayoutTreeViewBasicUsage, mountNode);

@@ -6,7 +6,8 @@ import from './assets/carousel.png';
 import from './assets/logo.png';
 
 // React-UI styles
-import from '../src/less/treeView.less';
+import from '../src/less/data/treeView.less';
+import from '../src/less/navigation/sideNav.less';
 
 import React from 'react';
 import Router from 'react-router';

@@ -8,7 +8,7 @@ var ComponentFactory = {
      */
     buildTemplateCache: function() {
         if(!this.templaceMap)
-            this.templateMap = new Object();
+            this.templateMap = {};
         this.templateMap["string"] = StringTemplate;
     },
 
@@ -22,6 +22,6 @@ var ComponentFactory = {
         var template = this.templateMap["string"];
         return template.build(meta);
     }
-}
+};
 
 module.exports = ComponentFactory;

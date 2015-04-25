@@ -1,6 +1,7 @@
-var requirejs = require("requirejs");
-var assert = require("chai").assert;
-var should = require("chai").should;
+import requirejs from "requirejs";
+import assert from "chai/assert";
+import should from "chai/should";
+
 requirejs.config({
     baseUrl: 'src/lib',
     nodeRequire: require
@@ -8,7 +9,7 @@ requirejs.config({
 
 describe('Text expression evaluator', function() {
 
-    var textExpressionEvaluator;
+    let textExpressionEvaluator;
     before(function (done) {
         requirejs(['text-expression-evaluator'], function (d1) {
             textExpressionEvaluator = d1;

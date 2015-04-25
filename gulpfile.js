@@ -95,4 +95,4 @@ gulp.task('build', ['build-css', 'build-docs', 'build-lib', 'build-dist', 'build
 gulp.task('watch-css', function () {
     // TODO: This is not deterministic... Sometimes it doesn't work. For precision, use 'build-css'
     gulp.watch(['./src/less/*.less'], ['build-css']);
-})
+});

@@ -1,6 +1,10 @@
 import React from 'react';
 
 const PageHeader = React.createClass({
+  propTypes: {
+    title: React.PropTypes.string,
+    subTitle: React.PropTypes.string
+  },
   render() {
     return (
       <div className='bs-docs-header' id='content'>

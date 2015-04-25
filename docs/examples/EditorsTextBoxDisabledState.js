@@ -4,6 +4,6 @@ const EditorsTextBoxDisabledState = (
         value='The lazy dog jumps over the lazy fox'
         disabled={true}
     />
-)
+);
 
 React.render(EditorsTextBoxDisabledState, mountNode);

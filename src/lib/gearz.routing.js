@@ -267,7 +267,7 @@
                 if (!result) return null;
                 result.shift();
                 return result.map(function(s){return s||undefined;});
-            };
+        }
         return SegmentsMatcher;
     }
     
@@ -682,9 +682,8 @@
             }
 
             return new RouteMatch(null, null, "No routes matched the URI.", details);
-        };
-
-        function addRoute(name, route) {
+        }
+    function addRoute(name, route) {
             if (typeof name !== 'string'
               && name != null || name === "" || /^\d+$/.test(name))
                 throw new Error("Invalid argument: route name is invalid");
@@ -693,13 +692,11 @@
                 _routes[name] = route;
             // allow fluent route definitions
             return this;
-        };
-
-        function getRoute(idOrName) {
+        }
+    function getRoute(idOrName) {
             return _routes[idOrName];
-        };
-
-        // values that will be used
+        }
+    // values that will be used
         var routes = opts.routes,
             globalValues = opts.globals,
             basePath = opts.basePath,

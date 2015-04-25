@@ -71,7 +71,7 @@ const ComponentsPage = React.createClass({
                   </div>
                 </div>
 
-                {/* General */}
+                {/* Editors */}
                 <div className='bs-docs-section'>
                   <h1 id='editors' className='page-header'>Editors</h1>
 
@@ -90,13 +90,20 @@ const ComponentsPage = React.createClass({
 
                 </div>
 
+                {/* Data */}
                 <div>
-                  <h1 id='layout' className='page-header'>Layout</h1>
-
-                  <h2 id='layout-treeview'>TreeView</h2>
+                  <h1 id='data' className='page-header'>Data</h1>
+                  <h2 id='data-treeview'>TreeView</h2>
                   <p>Basic usage</p>
-                  <ReactPlayground codeText={Samples.LayoutTreeViewBasicUsage}></ReactPlayground>
+                  <ReactPlayground codeText={Samples.DataTreeViewBasicUsage}></ReactPlayground>
+                </div>
 
+                {/* Navigation */}
+                <div>
+                  <h1 id='navigation' className='page-header'>Navigation</h1>
+                  <h2 id='navigation-sideNav'>SideNav</h2>
+                  <p>Basic usage</p>
+                  <ReactPlayground codeText={Samples.NavigationSideNavBasicUsage}></ReactPlayground>
                 </div>
 
               </div>
@@ -117,9 +124,12 @@ const ComponentsPage = React.createClass({
                     <SubNav href='#editors' key={1} text='Editors'>
                       <NavItem href='#editors-textbox' key={2}>TextBox</NavItem>
                     </SubNav>
-                    <SubNav href='#layout' key={3} text='Layout'>
-                      <NavItem href='#layout-treeview' key={4}>TreeView</NavItem>
+                    <SubNav href='#data' key={3} text='Data'>
+                      <NavItem href='#data-treeview' key={4}>TreeView</NavItem>
                     </SubNav>
+                      <SubNav href='#navigation' key={4} text='Navigation'>
+                          <NavItem href='#navigation-sideNav' key={4}>SideNav</NavItem>
+                      </SubNav>
                   </Nav>
                   <a className='back-to-top' href='#top'>
                   Back to top

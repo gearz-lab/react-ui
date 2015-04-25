@@ -1,6 +1,6 @@
 var React = require("react/addons");
-var TreeRow = require("./treeRow.jsx")
-var gearzMixin = require("../../gearz.mixin");
+var TreeRow = require("./treeRow.jsx");
+var gearzMixin = require("../../gearz.mixin.js");
 
 var TreeView = React.createClass({
     mixins: [gearzMixin],
@@ -156,25 +156,23 @@ var TreeView = React.createClass({
         //      eventObject.value = true
         // Output:
         //      merger = {nodes: {$mergeOrCreate: {app: {$mergeOrCreate: {page: {$mergeOrCreate: {editPanel: {$mergeOrCreate: {collapsed: {$set: true}}}}}}}}}}
-        var setter = {};
+        let setter = {};
         setter[eventObject.key] = {$set: eventObject.value};
-        var merger = eventObject.path.reduceRight((innerMerger, currentPathItem) => {
-            var itemMerger = {};
+        let merger = eventObject.path.reduceRight((innerMerger, currentPathItem) => {
+            let itemMerger = {};
             itemMerger[currentPathItem] = {$apply: mergeOrCreate(innerMerger)};
-            var nodesMerger = {nodes: {$apply: mergeOrCreate(itemMerger)}};
+            let nodesMerger = {nodes: {$apply: mergeOrCreate(itemMerger)}};
             return nodesMerger;
         }, setter);
 
         // determining what is the new state
-        var newState = React.addons.update(this.state, {nodesCache: merger.nodes});
+        let newState = React.addons.update(this.state, {nodesCache: merger.nodes});
         this.setState(newState);
 
         // calling external event handlers
-        if (eventObject.trigger(eventObject.genericEventName))
+        if (eventObject.trigger(eventObject.genericEventName) || eventObject.trigger(eventObject.specificEventName)) {
             return;
-
-        if (eventObject.trigger(eventObject.specificEventName))
-            return;
+        }
     },
 
     /**

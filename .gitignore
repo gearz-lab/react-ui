@@ -10,6 +10,5 @@ lib/
 dist/
 !tools/dist/
 docs-built/
-ie8/bundle.js
 tmp-bower-repo/
 tmp-docs-repo/

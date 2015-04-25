@@ -1,7 +1,8 @@
 {
   "scripts": {
     "docs": "node run-babel docs/server.js",
-    "test": "karma start --single-run && npm run lint && npm run build"
+    "test": "karma start --single-run && npm run lint && gulp build",
+    "lint": "eslint src test docs tools webpack karma.conf.js webpack.config.js webpack.docs.js"
   },
   "name": "reactui",
   "description": "A components library for ReactJS. This is part of the Gearz project",

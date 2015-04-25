@@ -1,5 +1,5 @@
 var React = require("react");
-var gearzMixin = require("../../gearz.mixin");
+var gearzMixin = require("../../gearz.mixin.js");
 
 var TreeRow = React.createClass({
     mixins: [gearzMixin],
@@ -38,13 +38,13 @@ var TreeRow = React.createClass({
             <li className="list-group-item noselect" style={{paddingLeft: indentation}}>
                 <span
                     className={
-                        !hasChildren ? "treeView-toggle-button glyphicon glyphicon-leaf" :
-                            collapsed ? "treeView-toggle-button glyphicon glyphicon-triangle-right" :
-                                "treeView-toggle-button glyphicon glyphicon-triangle-bottom"
+                        !hasChildren ? "rui-treeView-toggle-button" :
+                            collapsed ? "rui-treeView-toggle-button glyphicon glyphicon-triangle-right" :
+                                "rui-treeView-toggle-button glyphicon glyphicon-triangle-bottom"
                         }
                     onClick={ this.setter("collapsed", !collapsed) } >
                 </span>
-                <span className="treeView-content">
+                <span className="rui-treeView-content">
                         { display }
                 </span>
                 { hasChildren && cardinality !== null ? <span className="badge">{ cardinality }</span> : null }

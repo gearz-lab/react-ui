@@ -36,38 +36,40 @@ const Textbox = React.createClass({
     },
     render: function () {
 
-        var id = this.get("id");
-        var value = this.get("value");
-        var prependText = this.get("prependText");
-        var appendText = this.get("appendText");
-        var placeholder = this.get("placeholder");
-        var disabled = this.get("disabled");
+        let id = this.get('id');
+        let value = this.get('value');
+        let prependText = this.get('prependText');
+        let appendText = this.get('appendText');
+        let placeholder = this.get('placeholder');
+        let disabled = this.get('disabled');
 
-        var input = <input
+        let input = (<input
             id={id}
-            type="textbox"
-            className="form-control has-error"
+            type='textbox'
+            className='form-control has-error'
             placeholder={placeholder}
             value={value}
             disabled={disabled}
             onChange={
                 function (e) {
-                    return this.set(e, "value", e.target.value);
+                    return this.set(e, 'value', e.target.value);
                 }.bind(this)
                 }
-        />;
+        />);
 
         // if there's any add-on
-        if (prependText || appendText)
+        if (prependText || appendText) {
             return (
-                <div className="input-group">
-                            { prependText ? <div className="input-group-addon">{ prependText }</div> : null }
-                            { input }
-                            { appendText ? <div className="input-group-addon">{ appendText }</div> : null }
+                <div className='input-group'>
+                    { prependText ? <div className='input-group-addon'>{ prependText }</div> : null }
+                    { input }
+                    { appendText ? <div className='input-group-addon'>{ appendText }</div> : null }
                 </div>
             );
-        else
+        }
+        else {
             return input;
+        }
     }
 });
 

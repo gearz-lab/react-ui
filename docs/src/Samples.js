@@ -7,6 +7,9 @@ export default {
       EditorsTextBoxPlaceholder:          require('fs').readFileSync(__dirname + '/../examples/EditorsTextBoxPlaceholder.js', 'utf8'),
       EditorsTextBoxDisabledState:        require('fs').readFileSync(__dirname + '/../examples/EditorsTextBoxDisabledState.js', 'utf8'),
 
-      /* Layout */
-      LayoutTreeViewBasicUsage:           require('fs').readFileSync(__dirname + '/../examples/LayoutTreeViewBasicUsage.js', 'utf8')
+      /* Data */
+      DataTreeViewBasicUsage:             require('fs').readFileSync(__dirname + '/../examples/DataTreeViewBasicUsage.js', 'utf8'),
+
+      /* Navigation */
+      NavigationSideNavBasicUsage:        require('fs').readFileSync(__dirname + '/../examples/NavigationSideNavBasicUsage.js', 'utf8')
 };

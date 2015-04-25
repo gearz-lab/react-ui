@@ -4,6 +4,6 @@ const EditorsTextBoxPrependAndAppend = (
         value=''
         placeholder='Dollar amount'
     />
-)
+);
 
 React.render(EditorsTextBoxPrependAndAppend, mountNode);

@@ -5,6 +5,6 @@ const EditorsTextBoxPlaceholder = (
         prependText="$"
         appendText=".00"
     />
-)
+);
 
 React.render(EditorsTextBoxPlaceholder, mountNode);
