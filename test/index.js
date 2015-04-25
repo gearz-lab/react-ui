@@ -1,3 +1,21 @@
-import from 'es5-shim';
-const testsContext = require.context('.', true, /Spec$/);
+import 'es5-shim';
+
+beforeEach(function() {
+    sinon.stub(console, 'warn');
+});
+
+afterEach(function() {
+    if (typeof console.warn.restore === 'function') {
+        assert(!console.warn.called, () => console.warn.getCall(0).args[0]);
+        console.warn.restore();
+    }
+});
+
+describe('Process environment for tests', function () {
+    it('Should be development for React console warnings', function () {
+        console.log(process.env.NODE_ENV);
+    });
+});
+
+const testsContext = require.context('.', true, /spec$/);
 testsContext.keys().forEach(testsContext);

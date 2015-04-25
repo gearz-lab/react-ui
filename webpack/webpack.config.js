@@ -11,14 +11,14 @@ const argv = yargs
 const defaultOptions = {
   development: argv.debug,
   docs: false,
-  css: false,
   test: false,
   optimize: argv.optimizeMinimize
 };
 
 export default (options) => {
   options = _.merge({}, defaultOptions, options);
-  const environment = options.development ? 'development' : 'production';
+  const environment = options.test || options.development ?
+      'development' : 'production';
 
   const config = {
     entry: {
