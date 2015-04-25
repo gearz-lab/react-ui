@@ -1,4 +1,4 @@
-import React from "react/addons";
+import React from 'react/addons';
 
 let SideNav = React.createClass({
 
@@ -11,11 +11,13 @@ let SideNav = React.createClass({
      * A group is a top level menu item
      * @returns {Array}
      */
-    getGroups: function() {
+    getGroups: function () {
         const items = this.props.items;
         let result = [];
-        for(let item in items)
-            result.push(items[item]);
+        for (let item in items)
+            if (items.hasOwnProperty(item)) {
+                result.push(items[item]);
+            }
         return result;
     },
 
@@ -23,48 +25,58 @@ let SideNav = React.createClass({
      * Returns the items for a given group
      * @param group
      */
-    getItems: function(group) {
+    getItems: function (group) {
         let result = [];
-        for(let item in group.children)
-            result.push(group.children[item]);
+        for (let item in group.children)
+            if (group.children.hasOwnProperty(item)) {
+                result.push(group.children[item]);
+            }
         return result;
     },
 
-    render: function() {
-        return <div className="panel-group rui-sidenav" id="accordion">
-
-
-            <div className="panel panel-default">
-
-                <div className="panel-heading">
-                    <h4 className="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><span className="glyphicon glyphicon-folder-close">
-                                </span>Content</a>
-                    </h4>
-                </div>
+    renderGroup: function (group, key) {
+        return (
+            <div className="panel panel-default" key={key}>
+                { this.renderGroupHeader(group) }
                 <div id="collapseOne" className="panel-collapse collapse in">
                     <div className="panel-body">
                         <table className="table">
-                            <tr>
-                                <td>
-                                    <span className="glyphicon glyphicon-pencil text-primary"></span><a href="http://www.jquery2dotnet.com">Articles</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <span className="glyphicon glyphicon-comment text-success"></span>
-                                    <a href="http://www.jquery2dotnet.com">Comments</a>
-                                    <span className="badge">42</span>
-                                </td>
-                            </tr>
+                            { this.getItems(group).map((item, i) => this.renderMenuItem(item, i)) }
                         </table>
                     </div>
                 </div>
+            </div>);
+    },
 
-            </div>
+
+    renderGroupHeader: function (group) {
+        return (
+            <div className="panel-heading">
+                <h4 className="panel-title">
+                    <a href="#">
+                        <span className="glyphicon glyphicon-folder-close"></span>
+                        <span>{group.display}</span>
+                    </a>
+                </h4>
+            </div>);
+    },
 
 
-            </div>;
+    renderMenuItem: function (item, key) {
+        return (
+            <tr key={key}>
+                <td>
+                    <span className="glyphicon glyphicon-pencil text-primary"></span><a href="#">{item.display}</a>
+                </td>
+            </tr>);
+    },
+
+
+    render: function () {
+        return (
+            <div className="panel-group rui-sidenav" id="accordion">
+                { this.getGroups().map((group, i) => this.renderGroup(group, i)) }
+            </div>);
     }
 });
 

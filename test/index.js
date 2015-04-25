@@ -13,7 +13,7 @@ afterEach(function() {
 
 describe('Process environment for tests', function () {
     it('Should be development for React console warnings', function () {
-        console.log(process.env.NODE_ENV);
+        assert.equal(process.env.NODE_ENV, 'development');
     });
 });
 

@@ -30,6 +30,15 @@ let menu = {
 
 describe('Expression evaluator', function () {
     describe('SideNav', function () {
+
+        it('Should have proper class', function () {
+            let instance = ReactTestUtils.renderIntoDocument(
+                <SideNav items={menu} />
+            );
+            assert.ok(React.findDOMNode(instance).className.match(/rui-sidenav/));
+        });
+
+
         it('getGroups should return the menu groups', function () {
 
             let instance = ReactTestUtils.renderIntoDocument(
