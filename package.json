@@ -2,6 +2,7 @@
   "scripts": {
     "docs": "node run-babel docs/server.js",
     "test": "karma start --single-run",
+    "test-watch": "karma start",
     "lint": "eslint src test docs tools webpack karma.conf.js webpack.config.js webpack.docs.js"
   },
   "name": "reactui",

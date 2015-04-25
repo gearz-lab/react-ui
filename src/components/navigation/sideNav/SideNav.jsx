@@ -1,27 +1,33 @@
-var React = require("react/addons");
+import React from "react/addons";
 
-var tempData = {
-    main: {
-        display: "Main",
-        children: {
-            contacts: {
-                display: "Contacts"
-            },
-            schedule: {
-                display: "Schedule"
-            }
-        }
-    }
-};
+let SideNav = React.createClass({
 
-var SideNav = React.createClass({
-
-    getInitialState: function() {
-      return tempData;
+    propTypes: {
+        items: React.PropTypes.object.isRequired
     },
 
-    getGroups: function(data) {
+    /**
+     * Returns the groups for the given items.
+     * A group is a top level menu item
+     * @returns {Array}
+     */
+    getGroups: function() {
+        const items = this.props.items;
+        let result = [];
+        for(let item in items)
+            result.push(items[item]);
+        return result;
+    },
 
+    /**
+     * Returns the items for a given group
+     * @param group
+     */
+    getItems: function(group) {
+        let result = [];
+        for(let item in group.children)
+            result.push(group.children[item]);
+        return result;
     },
 
     render: function() {
@@ -62,4 +68,4 @@ var SideNav = React.createClass({
     }
 });
 
-module.exports = SideNav;
+export default SideNav;
