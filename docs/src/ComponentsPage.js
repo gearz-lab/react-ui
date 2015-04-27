@@ -101,9 +101,9 @@ const ComponentsPage = React.createClass({
                 {/* Navigation */}
                 <div>
                   <h1 id='navigation' className='page-header'>Navigation</h1>
-                  <h2 id='navigation-sideNav'>SideNav</h2>
+                  <h2 id='navigation-sideNav'>VNav</h2>
                   <p>Basic usage</p>
-                  <ReactPlayground codeText={Samples.NavigationSideNavBasicUsage}></ReactPlayground>
+                  <ReactPlayground codeText={Samples.NavigationVNavBasicUsage}></ReactPlayground>
                 </div>
 
               </div>
@@ -128,7 +128,7 @@ const ComponentsPage = React.createClass({
                       <NavItem href='#data-treeview' key={4}>TreeView</NavItem>
                     </SubNav>
                       <SubNav href='#navigation' key={4} text='Navigation'>
-                          <NavItem href='#navigation-sideNav' key={4}>SideNav</NavItem>
+                          <NavItem href='#navigation-sideNav' key={4}>VNav</NavItem>
                       </SubNav>
                   </Nav>
                   <a className='back-to-top' href='#top'>

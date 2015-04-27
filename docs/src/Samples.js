@@ -11,5 +11,5 @@ export default {
       DataTreeViewBasicUsage:             require('fs').readFileSync(__dirname + '/../examples/DataTreeViewBasicUsage.js', 'utf8'),
 
       /* Navigation */
-      NavigationSideNavBasicUsage:        require('fs').readFileSync(__dirname + '/../examples/NavigationSideNavBasicUsage.js', 'utf8')
+      NavigationVNavBasicUsage:        require('fs').readFileSync(__dirname + '/../examples/NavigationVNavBasicUsage.js', 'utf8')
 };

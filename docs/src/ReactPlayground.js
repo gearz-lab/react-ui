@@ -6,7 +6,9 @@ import classNames from 'classnames';
 import FormGroup from '../../src/components/layout/formGroup/formGroup.jsx';
 import Textbox from '../../src/components/editors/textbox/textbox';
 import TreeView from '../../src/components/data/treeView/treeView.jsx';
-import SideNav from '../../src/components/navigation/sideNav/SideNav.jsx';
+import VNav from '../../src/components/navigation/VNav/VNav.jsx';
+import VNavGroup from '../../src/components/navigation/VNav/VNavGroup.jsx';
+import VNavItem from '../../src/components/navigation/VNav/VNavItem.jsx';
 
 // React-Bootstrap
 import Accordion from 'react-bootstrap/lib/Accordion';

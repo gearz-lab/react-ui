@@ -9,6 +9,10 @@ import TabHeader from './components/layout/tabControl/tabHeader.jsx';
 import ComponentBuilder from './components/meta/componentBuilder/componentBuilder.jsx';
 import Link from './components/navigation/link/link.jsx';
 import Pager from './components/navigation/pager/pager.jsx';
+// Navigation
+import VNav from './components/navigation/VNav/VNav.jsx';
+import VNavGroup from './components/navigation/VNav/VNavGroup.jsx';
+import VNavItem from './components/navigation/VNav/VNavItem.jsx.jsx';
 
 export default {
     Textbox,
@@ -21,5 +25,9 @@ export default {
     TabHeader,
     ComponentBuilder,
     Link,
-    Pager
+    Pager,
+    // Navigation
+    VNav,
+    VNavGroup,
+    VNavItem
 }
