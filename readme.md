@@ -1,6 +1,8 @@
 React-UI
 ===
 
+[![Join the chat at https://gitter.im/gearz-lab/react-ui](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/gearz-lab/react-ui?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ![travis](https://travis-ci.org/gearz-lab/react-ui.svg?branch=master)
 
 Bootstrap based data components for React. Check out the [website](http://reactui.com).
