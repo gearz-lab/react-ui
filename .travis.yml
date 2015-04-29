@@ -4,7 +4,7 @@ node_js:
   - "0.10"
   - "0.12"
   - "iojs"
-  webhooks:
+webhooks:
     urls:
       - https://webhooks.gitter.im/e/0f4bbc965d7f5b1db630
     on_success: always
