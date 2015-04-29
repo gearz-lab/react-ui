@@ -1,6 +1,8 @@
 React-UI
 ===
 
+![travis](https://travis-ci.org/gearz-lab/react-ui.svg?branch=master)
+
 Bootstrap based data components for React. Check out the [website](http://reactui.com).
 
 Installing
